@@ -204,7 +204,7 @@ where:
 You can find the script and the results in `No_Pretraining_Comparison` folder
 
 ### Comparison with n-gram with cloning
-We replicate the study of [MSR paper}(https://arxiv.org/abs/2103.07115) using n-gram model with the cloning of a bunch of (200) repositories.
+We replicate the study of [MSR paper](https://arxiv.org/abs/2103.07115) using n-gram model with the cloning of a bunch of (200) repositories.
 You can run:
 ```
 python3 prediction_analysis.py --input_folder <input_for_n_gram> --output_folder  <path_to_output_folder> --result_csv <path_to_csv_file>
