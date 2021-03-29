@@ -1,0 +1,15 @@
+Read 693749 records
+['android_block_raw.txt', 'java_construct_raw.txt', 'android_construct_raw.txt', 'java_block_raw.txt', 'java_token_raw.txt', 'android_token_raw.txt']
+Read 345 records
+android block: 116 perfect prediction out of 345 (33.62%)
+Read 502 records
+java construct: 281 perfect prediction out of 502 (55.98%)
+Read 595 records
+android construct: 314 perfect prediction out of 595 (52.77%)
+Read 306 records
+java block: 79 perfect prediction out of 306 (25.82%)
+Read 1057 records
+java token: 692 perfect prediction out of 1057 (65.47%)
+Read 1109 records
+android token: 775 perfect prediction out of 1109 (69.88%)
+Overall: 2257 perfect prediction out of 3914 (57.66%)

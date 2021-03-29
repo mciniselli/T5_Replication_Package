@@ -1,0 +1,121 @@
+class 1: 1011 perfect predictions out of 82440 (1.23%)
+class 2: 1234 perfect predictions out of 28009 (4.41%)
+class 3: 2365 perfect predictions out of 26637 (8.88%)
+class 4: 4108 perfect predictions out of 26305 (15.62%)
+class 5: 7054 perfect predictions out of 28627 (24.64%)
+class 6: 11891 perfect predictions out of 33223 (35.79%)
+class 7: 14034 perfect predictions out of 32258 (43.51%)
+class 8: 18243 perfect predictions out of 35043 (52.06%)
+class 9: 30279 perfect predictions out of 47826 (63.31%)
+class 10: 321109 perfect predictions out of 353381 (90.87%)
+android block
+class 1: 60 perfect predictions out of 7406 (0.81%)
+class 2: 114 perfect predictions out of 2338 (4.88%)
+class 3: 213 perfect predictions out of 1945 (10.95%)
+class 4: 321 perfect predictions out of 1876 (17.11%)
+class 5: 500 perfect predictions out of 1955 (25.58%)
+class 6: 633 perfect predictions out of 2000 (31.65%)
+class 7: 719 perfect predictions out of 1763 (40.78%)
+class 8: 848 perfect predictions out of 1675 (50.63%)
+class 9: 1083 perfect predictions out of 1755 (61.71%)
+class 10: 3533 perfect predictions out of 4265 (82.84%)
+android construct
+class 1: 146 perfect predictions out of 15563 (0.94%)
+class 2: 219 perfect predictions out of 4967 (4.41%)
+class 3: 389 perfect predictions out of 4700 (8.28%)
+class 4: 644 perfect predictions out of 4455 (14.46%)
+class 5: 1118 perfect predictions out of 4768 (23.45%)
+class 6: 1684 perfect predictions out of 5125 (32.86%)
+class 7: 1975 perfect predictions out of 4954 (39.87%)
+class 8: 2420 perfect predictions out of 5175 (46.76%)
+class 9: 3909 perfect predictions out of 6845 (57.11%)
+class 10: 38549 perfect predictions out of 43984 (87.64%)
+android token
+class 1: 230 perfect predictions out of 15927 (1.44%)
+class 2: 273 perfect predictions out of 5826 (4.69%)
+class 3: 517 perfect predictions out of 5651 (9.15%)
+class 4: 941 perfect predictions out of 5763 (16.33%)
+class 5: 1677 perfect predictions out of 6444 (26.02%)
+class 6: 3350 perfect predictions out of 8392 (39.92%)
+class 7: 4058 perfect predictions out of 8398 (48.32%)
+class 8: 5335 perfect predictions out of 9412 (56.68%)
+class 9: 9387 perfect predictions out of 13704 (68.5%)
+class 10: 113109 perfect predictions out of 120987 (93.49%)
+java block
+class 1: 110 perfect predictions out of 10825 (1.02%)
+class 2: 151 perfect predictions out of 3680 (4.1%)
+class 3: 319 perfect predictions out of 3286 (9.71%)
+class 4: 424 perfect predictions out of 2832 (14.97%)
+class 5: 636 perfect predictions out of 2803 (22.69%)
+class 6: 824 perfect predictions out of 2601 (31.68%)
+class 7: 931 perfect predictions out of 2389 (38.97%)
+class 8: 1137 perfect predictions out of 2334 (48.71%)
+class 9: 1598 perfect predictions out of 2686 (59.49%)
+class 10: 5407 perfect predictions out of 6572 (82.27%)
+java construct
+class 1: 128 perfect predictions out of 14357 (0.89%)
+class 2: 156 perfect predictions out of 4380 (3.56%)
+class 3: 367 perfect predictions out of 4345 (8.45%)
+class 4: 671 perfect predictions out of 4448 (15.09%)
+class 5: 1038 perfect predictions out of 4692 (22.12%)
+class 6: 1769 perfect predictions out of 5361 (33.0%)
+class 7: 1932 perfect predictions out of 5098 (37.9%)
+class 8: 2719 perfect predictions out of 5674 (47.92%)
+class 9: 4365 perfect predictions out of 7733 (56.45%)
+class 10: 43152 perfect predictions out of 50149 (86.05%)
+java token
+class 1: 337 perfect predictions out of 18362 (1.84%)
+class 2: 321 perfect predictions out of 6818 (4.71%)
+class 3: 560 perfect predictions out of 6710 (8.35%)
+class 4: 1107 perfect predictions out of 6931 (15.97%)
+class 5: 2085 perfect predictions out of 7965 (26.18%)
+class 6: 3631 perfect predictions out of 9744 (37.26%)
+class 7: 4419 perfect predictions out of 9656 (45.76%)
+class 8: 5784 perfect predictions out of 10773 (53.69%)
+class 9: 9937 perfect predictions out of 15103 (65.79%)
+class 10: 117359 perfect predictions out of 127424 (92.1%)
+0 out of 693749
+20000 out of 693749
+40000 out of 693749
+60000 out of 693749
+80000 out of 693749
+100000 out of 693749
+120000 out of 693749
+140000 out of 693749
+160000 out of 693749
+180000 out of 693749
+200000 out of 693749
+220000 out of 693749
+240000 out of 693749
+260000 out of 693749
+280000 out of 693749
+300000 out of 693749
+320000 out of 693749
+340000 out of 693749
+360000 out of 693749
+380000 out of 693749
+400000 out of 693749
+420000 out of 693749
+440000 out of 693749
+460000 out of 693749
+480000 out of 693749
+500000 out of 693749
+520000 out of 693749
+540000 out of 693749
+560000 out of 693749
+580000 out of 693749
+600000 out of 693749
+620000 out of 693749
+640000 out of 693749
+660000 out of 693749
+680000 out of 693749
+class 1: mean 0.5, median 0.5)
+class 2: mean 0.45, median 0.4)
+class 3: mean 0.44, median 0.4)
+class 4: mean 0.45, median 0.4)
+class 5: mean 0.45, median 0.4)
+class 6: mean 0.45, median 0.4)
+class 7: mean 0.46, median 0.43)
+class 8: mean 0.46, median 0.4)
+class 9: mean 0.47, median 0.44)
+class 10: mean 0.5, median 0.5)

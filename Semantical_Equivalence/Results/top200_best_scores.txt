@@ -1,0 +1,1200 @@
+1
+b'ANDROID_CONSTRUCT:public static boolean isFormattedWritable(Application application, KeyValue keyValue) throws IOException { try { TrailerBlock trailerBlock = application.readTrailer(keyValue); for (int dataArea = 0; dataArea < 3; dataArea++) { if (!trailerBlock.canWriteDataBlock( 
+PRED: dataArea
+TARG: keyValue.getKey(), dataArea
+)) return false; } if (NfcUtils.getLeastSignificantNibble(trailerBlock.getGeneralPurposeByte()) != 0) return false; return true; } catch (MfLoginException e) { return false; } }'
+_________________________________
+2
+b'JAVA_CONSTRUCT:private Set<Class<Annotation>> getCustomInjectionAnnotations() { final Set<Class<Annotation>> annotations = new HashSet<Class<Annotation>>(); for (final Class<?> annotationClass : withAnnotations) { if (annotationClass.isAnnotation()) { annotations.add( 
+PRED: annotationClass
+TARG: (Class<Annotation>) annotationClass
+); } else { logger.warn("ignore class {}", annotationClass); } } return annotations; }'
+_________________________________
+3
+b'ANDROID_CONSTRUCT:public List<Operation> _queryAccount_Operations(long accountId) { synchronized (this) { if (account_OperationsQuery == null) { QueryBuilder<Operation> queryBuilder = queryBuilder(); queryBuilder.where(Properties.AccountId.eq( 
+PRED: accountId
+TARG: null
+)); queryBuilder.orderRaw("DATE ASC"); account_OperationsQuery = queryBuilder.build(); } } Query<Operation> query = account_OperationsQuery.forCurrentThread(); query.setParameter(0, accountId); return query.list(); }'
+_________________________________
+4
+b'JAVA_CONSTRUCT:private void excludeDockerfile(DefaultFileSet fileSet, File dockerFile) { ArrayList<String> excludes = fileSet.getExcludes() != null ? new ArrayList<>(Arrays.asList(fileSet.getExcludes())) : new ArrayList<String>(); excludes.add(dockerFile.getName()); fileSet.setExcludes( 
+PRED: excludes
+TARG: excludes.toArray(new String[0])
+); }'
+_________________________________
+5
+b'JAVA_CONSTRUCT:@Override public void parse(BserValues values) throws IOException { sid = values.getLong(1); uid = values.getInt(2); ownKeyGroupId = values.getInt( 
+PRED:  ⁇ 
+TARG: 3
+); theirKeyGroupId = values.getInt(4); ownPreKeyId = values.getLong(5); theirPreKeyId = values.getLong(6); masterKey = values.getBytes(7); }'
+_________________________________
+6
+b'ANDROID_CONSTRUCT:public void deliverResult(List<String> entries) { mIsLoading = false; if (isReset()) return; if (isStarted()) { super.deliverResult( 
+PRED: entries
+TARG: new ArrayList<>(entries)
+); } }'
+_________________________________
+7
+b'JAVA_CONSTRUCT:static ModelNode readProductInfo(ModelNode node) { ModelNode version = new ModelNode(); if (node.hasDefined(PRODUCT_NAME)) { version.get(PRODUCT_NAME).set(node.get(PRODUCT_NAME)); } if (node.hasDefined(MANAGEMENT_MINOR_VERSION)) { version.get(PRODUCT_VERSION).set(node.get( 
+PRED: MANAGEMENT_MINOR_VERSION
+TARG: PRODUCT_VERSION
+)); } return version; }'
+_________________________________
+8
+b'JAVA_CONSTRUCT:private void doConnect() throws SessionTimeOutException{ long to = getConnectTimeOut(); if(clientSocket.isConnected()){ ErrorCode ec = sendConnectProtocol(to); if(ErrorCode.SESSION_EXPIRED.equals(ec) || ErrorCode.CONNECTION_LOSS.equals( 
+PRED: ec
+TARG: equals(ec)
+)){ LOGGER.info("Session Expired, cleanup the client session."); cleanupSession(); } } }'
+_________________________________
+9
+b'JAVA_TOKEN:@Override public ByteBuffer encode(Serializable object) { try { ByteArrayOutputStream bout = new ByteArrayOutputStream(); try 
+PRED: {
+TARG: (ObjectOutputStream oout = getObjectOutputStream(bout)) {
+ oout.writeObject(object); } return ByteBuffer.wrap(bout.toByteArray()); } catch (IOException e) { throw new AssertionError(e); } }'
+_________________________________
+10
+b'JAVA_CONSTRUCT:private OpenCVFrameGrabber buildGrabber() throws FrameGrabber.Exception { switch (OsUtils.getOS()) { case WIN: case OSX: return OpenCVFrameGrabber.createDefault(address); case NIX: return OpenCVFrameGrabber.createDefault( 
+PRED: address
+TARG: vfile
+); default: throw new UnsupportedOperationException("Current OS is not supported"); } }'
+_________________________________
+11
+b'JAVA_CONSTRUCT:@Override public List<StructuralNode> findBy(Map<Object, Object> selector) { RubyArray rubyBlocks = (RubyArray) getRubyProperty("find_by", RubyHashUtil.convertMapToRubyHashWithSymbolsIfNecessary( 
+PRED: selector
+TARG: runtime, selector
+)); return new RubyBlockListDecorator<>(rubyBlocks); }'
+_________________________________
+12
+b'JAVA_TOKEN:private void learn() { defaultXGBoosts(false); defaultSearchGLM(null); defaultRandomForest(); defaultGBMs(); defaultDeepLearning(); defaultExtremelyRandomTrees(); defaultSearchXGBoost(null 
+PRED: );
+TARG: , false);
+ defaultSearchGBM(null); defaultSearchDL(); defaultStackedEnsembles(); }'
+_________________________________
+13
+b'JAVA_TOKEN:public CoinbaseButton createCoinbaseButton(CoinbaseButton button) throws IOException { final CoinbaseButton createdButton = coinbase.createButton( button, exchange.getExchangeSpecification().getApiKey(), signatureCreator, exchange.getNonceFactory()); return 
+PRED: createdButton;
+TARG: handleResponse(createdButton);
+ }'
+_________________________________
+14
+b'ANDROID_TOKEN:public static void toggleService(final Activity activity, final Geopoint dstCoords) { if (isRunning()) { stopService(activity 
+PRED: , dstCoords);
+TARG: );
+ } else { startService(activity, dstCoords); } }'
+_________________________________
+15
+b'JAVA_CONSTRUCT:public int getAllCookies(String name, List<HttpCookie> list) { int added = 0; if (0 < this.parsedList.size() && null != name) { for (HttpCookie cookie : this.parsedList) { if (cookie.getName().equals(name)) { list.add( 
+PRED: cookie
+TARG: cookie.clone()
+); added++; } } } return added; }'
+_________________________________
+16
+b'ANDROID_CONSTRUCT:public static Entry cursorToEntry(Cursor cursor) { Entry entry = new Entry(); entry.setId(cursor.getLong(0)); entry.setEntryType(cursor.getLong(1)); entry.setActualEntry(cursor.getString(2)); entry.setUserEditedEntry(cursor.getString( 
+PRED:  ⁇ 
+TARG: 3
+)); return entry; }'
+_________________________________
+17
+b'ANDROID_TOKEN:private void changeText(final Boolean over, final Icons icon, final Label helpLabel, final String defaultText) { boolean _equals = Objects.equal(helpLabel, null); if(_equals) return 
+PRED: ;
+TARG: ;;
+ if ((over).booleanValue()) { String _get = I18N.get(("menu_" + icon)); helpLabel.setText(_get); } else { helpLabel.setText(defaultText); } }'
+_________________________________
+18
+b'JAVA_CONSTRUCT:private JLabel createSummaryLabel(int size, long totalInstances, long totalBytes) { final DecimalFormat integerFormat = I18N.createIntegerFormat(); final String text = \' \' + getString("Classes") + ": " + integerFormat.format(size) + ", " + getString("Instances") + ": " + integerFormat.format(totalInstances) + ", " + getString("Kilo-Octets") + ": " + integerFormat.format( 
+PRED: totalBytes
+TARG: totalBytes / 1024
+); return new JLabel(text); }'
+_________________________________
+19
+b'JAVA_CONSTRUCT:@Override public CompletableFuture<Boolean> acquireLease(CompleteLease lease) { CompletableFuture<Boolean> future = null; try { future = CompletableFuture.completedFuture(acquireLeaseInternal((AzureBlobLease) lease)); } catch (IOException | StorageException e) { TRACE_LOGGER.warn(this.hostContext.withHostAndPartition(lease, "Failure acquiring lease"), e); future = new CompletableFuture<Boolean>(); future.completeExceptionally(LoggingUtils.wrapException( 
+PRED: e
+TARG: e, EventProcessorHostActionStrings.ACQUIRING_LEASE
+)); } return future; }'
+_________________________________
+20
+b'JAVA_TOKEN:CharacterHit hit(ParagraphBox.CaretOffsetX x, TwoDimensional.Position targetLine) { int parIdx = targetLine.getMajor(); ParagraphBox<PS, SEG, S> cell = virtualFlow.getCell(parIdx).getNode(); CharacterHit parHit = cell.hitTextLine(x, targetLine.getMinor()); return 
+PRED: parHit;
+TARG: parHit.offset(getParagraphOffset(parIdx));
+ }'
+_________________________________
+21
+b'JAVA_TOKEN:public File createProject(File projectDir, ProjectState projectState) { File pomFile = new File(projectDir, "pom.xml"); if (pomFile.exists()) { return 
+PRED: pomFile;
+TARG: null;
+ } createPom(pomFile, projectState); unpackResources(pomFile, projectDir); return pomFile; }'
+_________________________________
+22
+b'ANDROID_CONSTRUCT:public void bindSearchablesChanged() { boolean searchVisible = updateGlobalSearchIcon(); boolean voiceVisible = updateVoiceSearchIcon(searchVisible); if (mSearchDropTargetBar != null) { mSearchDropTargetBar.onSearchPackagesChanged( 
+PRED: voiceVisible
+TARG: searchVisible, voiceVisible
+); } }'
+_________________________________
+23
+b'JAVA_CONSTRUCT:public void removeJainMgcpListener(JainMgcpListener listener) { if (listener instanceof JainMgcpExtendedListener) { synchronized (this.jainMobicentsListeners) { this.jainMobicentsListeners.remove( 
+PRED: listener
+TARG: (JainMgcpExtendedListener) listener
+); } } else { synchronized (this.jainListeners) { this.jainListeners.remove(listener); } } }'
+_________________________________
+24
+b'ANDROID_CONSTRUCT:public void createImageLoadsImageForBanners() { TVShowViewHolder spy = spy(tvShowViewHolder); doReturn("http://www.example.com").when( 
+PRED: spy
+TARG: mockSeriesInfo
+).getImageURL(); doNothing().when(spy).loadImage(anyString()); spy.createImage(mockSeriesInfo, 100, 100); verify(spy).loadImage("http://www.example.com"); verify(spy, never()).loadImage(null); }'
+_________________________________
+25
+b'JAVA_CONSTRUCT:public void onQueryFilterChange(final String currentText, final boolean valid, final String validationMessage) { if (valid) { showValidationSuccesIcon( 
+PRED: validationMessage
+TARG: currentText
+); } else { showValidationFailureIcon(validationMessage); } listeners.forEach(listener -> listener.queryChanged(valid, currentText)); }'
+_________________________________
+26
+b'JAVA_CONSTRUCT:static ModelNode readProductInfo(ModelNode node) { ModelNode version = new ModelNode(); if (node.hasDefined(PRODUCT_NAME)) { version.get(PRODUCT_NAME).set(node.get(PRODUCT_NAME)); } if (node.hasDefined(MANAGEMENT_MINOR_VERSION)) { version.get( 
+PRED: MANAGEMENT_MINOR_VERSION
+TARG: PRODUCT_VERSION
+).set(node.get(PRODUCT_VERSION)); } return version; }'
+_________________________________
+27
+b'JAVA_TOKEN:@SafeVarargs public final <T> void setSubclasses(Class<T> type, Class<? extends T>... subclasses) { setSubclasses(type 
+PRED: , subclasses);
+TARG: , Arrays.asList(subclasses));
+ }'
+_________________________________
+28
+b'JAVA_TOKEN:public void calculatePackagingData() { if (calculatedPackageData) { return; } PackagingDataCalculator pdc = this.getPackagingDataCalculator(); if (pdc != null) { calculatedPackageData = true; pdc.calculate 
+PRED: ();
+TARG: (this);
+ } }'
+_________________________________
+29
+b'ANDROID_CONSTRUCT:public void onConnectionStateChange(final BluetoothGatt gatt, final int status, final int newState) { if (status != BluetoothGatt.GATT_SUCCESS) { logw("Connection state change error: " + status); broadcastError(status); return; } if (newState == BluetoothProfile.STATE_CONNECTED) { setState( 
+PRED: STATE_CONNECTED
+TARG: STATE_DISCOVERING_SERVICES
+); gatt.discoverServices(); } else if (newState == BluetoothProfile.STATE_DISCONNECTED) { setState(STATE_DISCONNECTED); refreshDeviceCache(gatt); gatt.close(); mBluetoothGatt = null; stopSelf(); } }'
+_________________________________
+30
+b'ANDROID_CONSTRUCT:private static List<GpodnetEpisodeAction> readEpisodeActionsFromString(String s) { String[] lines = s.split("\\ "); List<GpodnetEpisodeAction> result = new ArrayList<>(lines.length); for(String line : lines) { if(TextUtils.isEmpty(line)) { GpodnetEpisodeAction action = GpodnetEpisodeAction.readFromString(line); if(action != null) { result.add( 
+PRED: action
+TARG: GpodnetEpisodeAction.readFromString(line)
+); } } } return result; }'
+_________________________________
+31
+b'JAVA_CONSTRUCT:@Override public final <B> Map<String, B> getBeansOfType(final Class<B> type) throws BeansException { return toUnmodifiableMap(getApplicationContext().getBeansOfType( 
+PRED: type
+TARG: requireNonNull(type)
+)); }'
+_________________________________
+32
+b'ANDROID_CONSTRUCT:public void setLoadingVisible(boolean showActionbarAnimation, boolean showContentFrameAnimation) { setLoadingVisible(showActionbarAnimation); if (showContentFrameAnimation) { loadingAnimationContainer.setVisibility(View.VISIBLE); loadingAnimationText.setVisibility( 
+PRED: View.VISIBLE
+TARG: View.GONE
+); } else { loadingAnimationContainer.setVisibility(View.GONE); loadingAnimationText.setVisibility(View.GONE); } }'
+_________________________________
+33
+b'ANDROID_CONSTRUCT:public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) { switch (key) { case Keys.NO_CHANGE_SINCE_MAX_PRECISION: setNoChangeSinceMaxPrecisionSummary(); break; case Keys.FORMATTED_PLAN_AUTO_SELECT_DAY_TIME: setAutoSelectDayTimeSummary(); break; case Keys.THEME: setListPreferenceSummary( 
+PRED: key
+TARG: themePref
+); toggleTheme(); break; case KEY_WEB_PLAN_CUSTOM_STYLE_PRESET: applyWebPlanCustomStylePreset(); break; case Keys.DRAWER_ACTIVE_ITEM_TEXT_COLOR: setListPreferenceSummary(key); break; } }'
+_________________________________
+34
+b'ANDROID_TOKEN:public static int getBalanceGraphicResourceId() { switch((int)balanceSignal) { case 0: return R.drawable.graphic_neutral; case 1: return R.drawable.graphic_up; case 
+PRED: 2:
+TARG: -1:
+ return R.drawable.graphic_down; default: return R.drawable.graphic_infinite; } }'
+_________________________________
+35
+b'JAVA_CONSTRUCT:@Override public void writeFile(File path, List<ResultType> models) throws IOException { CsvSchema schema = mapper.schemaFor( 
+PRED: JsonNode.class
+TARG: resultType
+); System.out.println(schema.getColumnDesc()); ObjectWriter writer = mapper.writer(schema); writer.writeValue(new FileOutputStream(path), models); }'
+_________________________________
+36
+b'ANDROID_CONSTRUCT:public void setLoadingVisible(boolean showActionbarAnimation, boolean showContentFrameAnimation) { setLoadingVisible(showActionbarAnimation); if (showContentFrameAnimation) { loadingAnimationContainer.setVisibility(View.VISIBLE); loadingAnimationText.setVisibility(View.GONE); } else { loadingAnimationContainer.setVisibility(View.GONE); loadingAnimationText.setVisibility( 
+PRED: View.VISIBLE
+TARG: View.GONE
+); } }'
+_________________________________
+37
+b'ANDROID_CONSTRUCT:public Set<String> getAlbums(final String artist, final boolean albumArtist) { final Set<String> albums = new HashSet<>(); for (final List<String> ai : mAlbumSet) { if (albumArtist && ai.get( 
+PRED: 0
+TARG: 2
+).equals(artist) || !albumArtist && ai.get(1).equals(artist)) { albums.add(ai.get(0)); } } return albums; }'
+_________________________________
+38
+b'ANDROID_CONSTRUCT:public void removeDelegate(CCKeyDelegateProtocol delegate) { if (delegate == null) return; synchronized (keyHandlers) { for (int ind = 0; ind < keyHandlers.size(); ind++) { CCKeyHandler handler = keyHandlers.get(ind); if (handler.getDelegate() == delegate) { keyHandlers.remove( 
+PRED: ind
+TARG: handler
+); break; } } } }'
+_________________________________
+39
+b'JAVA_CONSTRUCT:public void handleException(InternalWorkingMemory wm, Activation activation, Exception e) { if ( this.legacyConsequenceExceptionHandler != null ) { this.legacyConsequenceExceptionHandler.handleException( activation, wm, e ); } else if ( this.consequenceExceptionHandler != null ) { this.consequenceExceptionHandler.handleException( 
+PRED: activation, wm, e
+TARG: activation, wm.getKnowledgeRuntime(), e
+); } else { throw new RuntimeException( e ); } }'
+_________________________________
+40
+b'JAVA_CONSTRUCT:@Override public void addDeclaredTypeParameters(List<JvmTypeParameter> typeParameters) { if (typeParameters.isEmpty()) return; List<JvmTypeParameter> list = basicGetDeclardTypeParameters(); if (list == null) { super.addDeclaredTypeParameters( 
+PRED: typeParameters
+TARG: parent.getDeclaredTypeParameters()
+); getDeclaredTypeParameters().addAll(typeParameters); } else { list.addAll(typeParameters); } }'
+_________________________________
+41
+b'JAVA_CONSTRUCT:@Override public void parse(BserValues values) throws IOException { sid = values.getLong(1); uid = values.getInt(2); ownKeyGroupId = values.getInt(3); theirKeyGroupId = values.getInt(4); ownPreKeyId = values.getLong( 
+PRED:  ⁇ 
+TARG: 5
+); theirPreKeyId = values.getLong(6); masterKey = values.getBytes(7); }'
+_________________________________
+42
+b'JAVA_TOKEN:public void unregister() { final String methodName = "unregister()"; final boolean trace = TraceComponent.isAnyTracingEnabled(); if (trace && tc.isEntryEnabled()) Tr.entry(tc, methodName, this); if (reg != null) reg.unregister(); reg = null; if (trace && tc.isEntryEnabled()) Tr.exit(tc 
+PRED: , methodName);
+TARG: , methodName, this);
+ }'
+_________________________________
+43
+b'ANDROID_CONSTRUCT:private Interval getNextInterval() { Calendar nextNoon = (Calendar) _noon.clone(); nextNoon.add(Calendar.DATE, 1); if (_current.is_day) return new Interval(_current.end, _calculator.getSunriseFor(nextNoon).getTimeInMillis(), false); else return new Interval(_calculator.getSunriseFor(_noon).getTimeInMillis(), _calculator.getSunsetFor( 
+PRED: nextNoon
+TARG: _noon
+).getTimeInMillis(), true); }'
+_________________________________
+44
+b'ANDROID_CONSTRUCT:public void getStickerFeatureAvailability(@NonNull Callback<Boolean> callback) { SignalExecutors.BOUNDED.execute(() -> { try (Cursor cursor = stickerDatabase.getAllStickerPacks("1")) { if (cursor != null && cursor.moveToFirst()) { callback.onResult(true); } else { callback.onResult( 
+PRED: false
+TARG: attachmentDatabase.hasStickerAttachments()
+); } } }); }'
+_________________________________
+45
+b'JAVA_CONSTRUCT:@Override public long skip (final long nSkip) throws IOException { ValueEnforcer.isGE0 ( 
+PRED: nSkip, "Skip"
+TARG: nSkip, "SkipValue"
+); _ensureOpen (); if (nSkip == 0) return 0L; long nRealSkip = nSkip; final int nBufAvail = m_aBuf.length - m_nBufPos; if (nBufAvail > 0) { if (nRealSkip <= nBufAvail) { m_nBufPos += nRealSkip; return nRealSkip; } m_nBufPos = m_aBuf.length; nRealSkip -= nBufAvail; } return nBufAvail + super.skip (nRealSkip); }'
+_________________________________
+46
+b'JAVA_CONSTRUCT:public CellClickObservable click(View view) { ClickExposureCellOp rxClickEvent = mRxClickEvents.get(view); if (rxClickEvent == null) { rxClickEvent = new ClickExposureCellOp(view, this, this.pos); mRxClickEvents.put(view, rxClickEvent); } else { rxClickEvent.setArg1(view); rxClickEvent.setArg2(this); rxClickEvent.setArg3( 
+PRED: this
+TARG: this.pos
+); } return click(view, rxClickEvent); }'
+_________________________________
+47
+b'JAVA_CONSTRUCT:public void evaluate(BinarySolution solution) { double[] f = new double[solution.getNumberOfObjectives()]; f[0] = 1 + u(solution.getVariableValue(0)); double g = evalG(solution); double h = evalH( 
+PRED: solution
+TARG: f[0], g
+); f[1] = h * g; solution.setObjective(0, f[0]); solution.setObjective(1, f[1]); }'
+_________________________________
+48
+b'JAVA_CONSTRUCT:@NotNull @Override public RealApolloCall<T> responseFetcher(@NotNull ResponseFetcher fetcher) { if (state.get() != IDLE) throw new IllegalStateException("Already Executed"); return toBuilder() .responseFetcher( 
+PRED: fetcher
+TARG: checkNotNull(fetcher, "responseFetcher == null")
+) .build(); }'
+_________________________________
+49
+b'JAVA_CONSTRUCT:@Override public String convertToFunction(final String wkt, final String srid, final Database database) { final String oracleWkt = OracleSpatialUtils.getOracleWkt(wkt); final String oracleSrid = OracleSpatialUtils.getOracleSrid( 
+PRED: srid
+TARG: srid, database
+); return super.convertToFunction(oracleWkt, oracleSrid, database); }'
+_________________________________
+50
+b'JAVA_TOKEN:private boolean getBoolean(Map<String, String> parameters, String key, boolean defaultValue) { if (parameters.containsKey(key) == false) { return defaultValue; } String value = parameters.get(key); if (value == null || value.length() == 0) { return 
+PRED: defaultValue;
+TARG: true;
+ } return Boolean.parseBoolean(value); }'
+_________________________________
+51
+b'JAVA_CONSTRUCT:public CellClickObservable click(View view) { ClickExposureCellOp rxClickEvent = mRxClickEvents.get(view); if (rxClickEvent == null) { rxClickEvent = new ClickExposureCellOp(view, this, this.pos); mRxClickEvents.put(view, rxClickEvent); } else { rxClickEvent.setArg1(view); rxClickEvent.setArg2( 
+PRED: this.pos
+TARG: this
+); rxClickEvent.setArg3(this.pos); } return click(view, rxClickEvent); }'
+_________________________________
+52
+b'JAVA_CONSTRUCT:public static CacheLoadingException newCacheLoadingException(Exception e, Exception suppressed) { CacheLoadingException ne = new CacheLoadingException(e); ne.addSuppressed( 
+PRED: suppressed
+TARG: e
+); return ne; }'
+_________________________________
+53
+b'JAVA_CONSTRUCT:public void setRobotFlag(char flag) { String flags = getRobotFlags(); if (flags == null) { setRobotFlags( 
+PRED: flag
+TARG: Character.toString(flag)
+); } else { if (flags.indexOf(flag) < 0) { setRobotFlags(flags + flag); } } }'
+_________________________________
+54
+b'JAVA_TOKEN:public PanelUser updateRole(PanelUser panelUser, PanelUserRole panelUserRole, User modifier) { panelUser.setRole(panelUserRole); panelUser.setLastModified(new Date()); panelUser.setLastModifier(modifier); return 
+PRED: panelUser;
+TARG: persist(panelUser);
+ }'
+_________________________________
+55
+b'JAVA_CONSTRUCT:public void writeInt(long value) throws IOException { int len; if (value < 0) { startValue(_Private_IonConstants.tidNegInt); len = _writer.writeUIntValue(-value); } else { startValue( 
+PRED: _Private_IonConstants.tidNegInt
+TARG: _Private_IonConstants.tidPosInt
+); len = _writer.writeUIntValue(value); } _patch.patchValue(len); closeValue(); }'
+_________________________________
+56
+b'JAVA_CONSTRUCT:@Override public List<WebElement> findElements(By by) { dispatcher.beforeFindBy(by, null, driver); List<WebElement> temp = driver.findElements(by); dispatcher.afterFindBy(by, null, driver); List<WebElement> result = new ArrayList<>(temp.size()); for (WebElement element : temp) { result.add( 
+PRED: element
+TARG: createWebElement(element)
+); } return result; }'
+_________________________________
+57
+b'JAVA_CONSTRUCT:public MultiBinder convert(Class returnType, Class... argTypes) { this.invokeBinder = invokeBinder.convert(returnType, argTypes); this.guardBinder = guardBinder.convert( 
+PRED: returnType, argTypes
+TARG: boolean.class, argTypes
+); return this; }'
+_________________________________
+58
+b'JAVA_TOKEN:private UserProfile removeUserProfile(Session session, String userName, boolean broadcast) throws Exception { Node profileNode; try { profileNode = utils.getProfileNode(session, userName); } catch (PathNotFoundException e) { return null; } UserProfile profile = readProfile(userName, profileNode); if (broadcast) { preDelete(profile, broadcast); } profileNode.remove(); session.save(); removeFromCache(profile); if (broadcast) { postDelete(profile 
+PRED: , broadcast);
+TARG: );
+ } return profile; }'
+_________________________________
+59
+b'ANDROID_CONSTRUCT:public AjaxTask(FragmentType fragment, Context context, String xsrfToken, String what) { this.fragment = fragment; this.context = context; this.xsrfToken = xsrfToken; this.what = what; if (TextUtils.isEmpty(this.xsrfToken)) Log.w(TAG, "no xsrf token for ajax call"); if (TextUtils.isEmpty( 
+PRED: what
+TARG: this.what
+)) Log.w(TAG, "no what for ajax call"); }'
+_________________________________
+60
+b'ANDROID_CONSTRUCT:public static void toggleService(final Activity activity, final Geopoint dstCoords) { if (isRunning()) { stopService( 
+PRED: activity, dstCoords
+TARG: activity
+); } else { startService(activity, dstCoords); } }'
+_________________________________
+61
+b'JAVA_CONSTRUCT:public void readFields(DataInput in) throws IOException { namespaceId = in.readInt(); blockId = in.readLong(); numBytes = in.readLong(); genStamp = in.readLong(); pipelineDepth = in.readInt(); getWritePipelineInfo().readFields( 
+PRED: in
+TARG: getDataTransferVersion(), in
+); }'
+_________________________________
+62
+b'JAVA_TOKEN:public Location rangeStartForRangeLast(Location rangeLast) { for (Location loc : reverseSortedLocations) { if (loc.compareTo(rangeLast) < 0) { return loc 
+PRED: ;
+TARG: .next();
+ } } return new Location(this, 0, 0); }'
+_________________________________
+63
+b'ANDROID_TOKEN:public void setLoadingVisible(boolean showActionbarAnimation, boolean showContentFrameAnimation) { setLoadingVisible(showActionbarAnimation); if (showContentFrameAnimation) { loadingAnimationContainer.setVisibility(View.VISIBLE); loadingAnimationText.setVisibility(View.GONE); } else { loadingAnimationContainer.setVisibility(View.GONE); loadingAnimationText.setVisibility 
+PRED: (View.VISIBLE);
+TARG: (View.GONE);
+ } }'
+_________________________________
+64
+b'JAVA_CONSTRUCT:private void extractFrom(UseCaseResult useCaseResult) { for (ScenarioResult scenarioResult : useCaseResult.scenarioResults) { switch (scenarioResult.issue) { case FAILED: scenariosFailed.add(scenarioResult); break; case IGNORED: scenariosIgnored.add(scenarioResult); break; default: case SUCCEEDED: scenariosSucceeded.add(scenarioResult); nbScenariosOk++; } } for (SubUseCaseResult subUseCaseResult : useCaseResult.subUseCaseResults) { extractFrom( 
+PRED: subUseCaseResult
+TARG: subUseCaseResult.useCaseResult
+); } }'
+_________________________________
+65
+b'JAVA_CONSTRUCT:@Override public void parse(BserValues values) throws IOException { sid = values.getLong(1); uid = values.getInt(2); ownKeyGroupId = values.getInt(3); theirKeyGroupId = values.getInt( 
+PRED:  ⁇ 
+TARG: 4
+); ownPreKeyId = values.getLong(5); theirPreKeyId = values.getLong(6); masterKey = values.getBytes(7); }'
+_________________________________
+66
+b'JAVA_CONSTRUCT:protected Timer createNonPersistentCalendarTimer(BeanO beanO, ParsedScheduleExpression parsedExpr, Serializable info) { final boolean isTraceOn = TraceComponent.isAnyTracingEnabled() && tc.isDebugEnabled(); if (isTraceOn && tc.isDebugEnabled()) Tr.entry(tc, "createNonPersistentCalendarTimer : " + beanO); TimerNpImpl timer = new TimerNpImpl(beanO.getId(), parsedExpr, info); queueOrStartNpTimer(beanO, timer); if ( 
+PRED: isTraceOn && tc.isDebugEnabled()
+TARG: isTraceOn && tc.isEntryEnabled()
+) Tr.exit(tc, "createNonPersistentCalendarTimer : " + timer); return timer; }'
+_________________________________
+67
+b'ANDROID_CONSTRUCT:private void fireModeChanged(Mode mode) { ModeEvent event = Pools.obtain(ModeEvent.class); event.mode = mode; fire(event); Pools.free( 
+PRED: event
+TARG: mode
+); }'
+_________________________________
+68
+b'ANDROID_CONSTRUCT:private void populateFields(){ if(eyepieceId >= 0 && !paused){ EquipmentDAO db = new EquipmentDAO(this); Cursor eyepieceData = db.getSavedEyepiece(eyepieceId); focalLengthText = removeUnits(eyepieceData.getString( 
+PRED: 0
+TARG: 1
+)); lengthUnitText = getUnits(eyepieceData.getString(1)); typeText = eyepieceData.getString(2); } focalLength.setText(focalLengthText); focalLengthUnit.setText(lengthUnitText); type.setText(typeText); }'
+_________________________________
+69
+b'JAVA_CONSTRUCT:@Override public void forEach(IntConsumer ic) { for (int i = 0; i < this.highLowContainer.size(); i++) { this.highLowContainer.getContainerAtIndex(i).forEach( 
+PRED: ic
+TARG: this.highLowContainer.keys[i], ic
+); } }'
+_________________________________
+70
+b'ANDROID_TOKEN:private long countSites(Context context) { DBHelper dbHelper = DBHelper.getHelper(context); try { return dbHelper.getDBSiteSettings().countOf(); } catch (SQLException e) { Log.e(TAG, "countSites", e); return -1; } finally { dbHelper. 
+PRED: close();
+TARG: release();
+ } }'
+_________________________________
+71
+b'JAVA_CONSTRUCT:private RubyHash getParseHeaderOnlyOption() { Map<String, Object> options = new HashMap<>(); options.put("parse_header_only", true); return RubyHashUtil.convertMapToRubyHashWithSymbols( 
+PRED: options
+TARG: rubyRuntime, options
+); }'
+_________________________________
+72
+b'JAVA_CONSTRUCT:@Override public CompletableFuture<Boolean> acquireLease(CompleteLease lease) { CompletableFuture<Boolean> future = null; try { future = CompletableFuture.completedFuture(acquireLeaseInternal((AzureBlobLease) lease)); } catch (IOException | StorageException e) { TRACE_LOGGER.warn(this.hostContext.withHostAndPartition(lease, "Failure acquiring lease"), e); future = new CompletableFuture<Boolean>(); future.completeExceptionally( 
+PRED: e
+TARG: LoggingUtils.wrapException(e, EventProcessorHostActionStrings.ACQUIRING_LEASE)
+); } return future; }'
+_________________________________
+73
+b'JAVA_CONSTRUCT:public void setProxyAuthenticationMethods(List<ProxyAuthenticationMethod> proxyAuthenticationMethods) { if(proxyAuthenticationMethods == null) { this.proxyAuthenticationMethods = null; } else { ValidationUtils.assertNotEmpty(proxyAuthenticationMethods, "proxyAuthenticationMethods"); this.proxyAuthenticationMethods = Collections.unmodifiableList( 
+PRED: proxyAuthenticationMethods
+TARG: new ArrayList<ProxyAuthenticationMethod>(proxyAuthenticationMethods)
+); } }'
+_________________________________
+74
+b'JAVA_CONSTRUCT:@Override public void configure(Map stormConf, JsonNode filterParams) { JsonNode filterByHostNode = filterParams.get("ignoreOutsideHost"); if (filterByHostNode == null) { ignoreOutsideHost = false; } else { ignoreOutsideHost = filterByHostNode.asBoolean(false); } if (!ignoreOutsideHost) { JsonNode filterByDomainNode = filterParams .get("ignoreOutsideDomain"); if ( 
+PRED: filterByDomainNode == null
+TARG: filterByHostNode == null
+) { ignoreOutsideDomain = false; } else { ignoreOutsideDomain = filterByDomainNode.asBoolean(false); } } else { ignoreOutsideDomain = false; } }'
+_________________________________
+75
+b'JAVA_CONSTRUCT:private void cancelRunnable() { if (metricRunnableFuture != null) { metricRunnableFuture.cancel(true); metricsEventRunnable.clearSlaveMetrics(); } if (managerRunnableFuture != null) { managerRunnableFuture.cancel( 
+PRED: true
+TARG: false
+); } if (updateCheckerFuture != null) { updateCheckerFuture.cancel(true); } }'
+_________________________________
+76
+b'JAVA_CONSTRUCT:@Override public String registerAllele(final String glstring) throws GlClientException { try { return reader.readAllele( 
+PRED: glstring
+TARG: glstring, ""
+).getId(); } catch (IOException e) { throw new GlClientException("could not register allele, caught " + e.getMessage(), e); } }'
+_________________________________
+77
+b'JAVA_TOKEN:protected Map<String, CmsProperty> getPropertiesByName(List<CmsProperty> properties) { Map<String, CmsProperty> result = new HashMap<String, CmsProperty>(); for (CmsProperty property : properties) { String key = property.getName(); result.put(key, property 
+PRED: );
+TARG: .clone());
+ } return result; }'
+_________________________________
+78
+b'ANDROID_CONSTRUCT:private void notifyLoadCanceled(final long bytesLoaded) { if (eventHandler != null && eventListener != null) { eventHandler.post(new Runnable() { @Override public void run() { eventListener.onLoadCanceled( 
+PRED: bytesLoaded
+TARG: eventSourceId, bytesLoaded
+); } }); } }'
+_________________________________
+79
+b'ANDROID_TOKEN:public void removeAssignments(DBObject b) { for (DBObject o : getAssignedBuoys(b)) { removeAssignment(o, b); } for (DBObject o : getAssignedBoats(b)) { removeAssignment 
+PRED: (o, b);
+TARG: (b, o);
+ } }'
+_________________________________
+80
+b'JAVA_CONSTRUCT:private TimeWindow mergeWindow(TimeWindow curWindow, TimeWindow other, Collection<TimeWindow> mergedWindow) { if (curWindow.intersects(other)) { mergedWindow.add( 
+PRED: curWindow
+TARG: other
+); return curWindow.cover(other); } else { return curWindow; } }'
+_________________________________
+81
+b'ANDROID_TOKEN:public void addElementToScene(GameElement gameElement) { Log.d(TAG, "add element to scene = " + gameElement.getIdentifier()); gameElement.createSprite(getVertexBufferObjectManager()); super.addElementToScene(gameElement 
+PRED: );
+TARG: .getSprite(), false);
+ }'
+_________________________________
+82
+b'JAVA_TOKEN:public static CacheLoadingException newCacheLoadingException(Exception e, Exception suppressed) { CacheLoadingException ne = new CacheLoadingException(e); ne.addSuppressed 
+PRED: (suppressed);
+TARG: (e);
+ return ne; }'
+_________________________________
+83
+b'JAVA_CONSTRUCT:public void incrementEvalStatistics(SufficientStatistics gradient, SufficientStatistics currentParameters, Expression2 logicalForm, IncEvalState state, double count) { List<SufficientStatistics> gradientList = gradient.coerceToList().getStatistics(); List<SufficientStatistics> parameterList = currentParameters.coerceToList().getStatistics(); evalFamily.incrementSufficientStatistics(gradientList.get( 
+PRED: 0
+TARG: 1
+), parameterList.get(1), logicalForm, state, count); }'
+_________________________________
+84
+b'JAVA_CONSTRUCT:public static lbmonitor[] get(nitro_service service, lbmonitor_args args) throws Exception{ lbmonitor obj = new lbmonitor(); options option = new options(); option.set_args( 
+PRED: args
+TARG: nitro_util.object_to_string_withoutquotes(args)
+); lbmonitor[] response = (lbmonitor[])obj.get_resources(service, option); return response; }'
+_________________________________
+85
+b'JAVA_TOKEN:public Vector2i mul(int scalar, Vector2i dest) { dest.x 
+PRED: = x  ⁇  scalar;
+TARG: = x * scalar;
+ dest.y = y * scalar; return dest; }'
+_________________________________
+86
+b'ANDROID_CONSTRUCT:public HostsContainer(List<ProtoHost> hosts, ByteString unknownFields) { super(unknownFields); this.hosts = immutableCopyOf( 
+PRED: hosts
+TARG: "hosts", hosts
+); }'
+_________________________________
+87
+b'ANDROID_CONSTRUCT:public void setIsKeyEnabled(boolean enabled) { if (isKeyEnabled_ != enabled) { isKeyEnabled_ = enabled; if (enabled) CCKeyDispatcher.sharedDispatcher().addDelegate( 
+PRED: this
+TARG: this, 0
+); else CCKeyDispatcher.sharedDispatcher().removeDelegate(this); } }'
+_________________________________
+88
+b'JAVA_CONSTRUCT:public static void dump(String message, Throwable exception) { printEmphasized(StringPrinter.buildString(printer -> { printer.println(message); exception.printStackTrace( 
+PRED: printer
+TARG: printer.toPrintWriter()
+); })); }'
+_________________________________
+89
+b'JAVA_TOKEN:public static CoronaDirectTaskUmbilical createDirectUmbilical( TaskUmbilicalProtocol taskTracker 
+PRED: ,
+TARG: , InetSocketAddress jobTrackerAddress,
+ InetSocketAddress secondaryTrackerAddress, JobConf conf) throws IOException { LOG.info("Creating direct umbilical to " + jobTrackerAddress.toString()); jtConnectTimeoutMsec = conf.getLong( "corona.jobtracker.connect.timeout.msec", 60000L); return new CoronaDirectTaskUmbilical(taskTracker, conf, jobTrackerAddress, secondaryTrackerAddress); }'
+_________________________________
+90
+b'JAVA_CONSTRUCT:public void addEdge(VertexT from, VertexT to) { Preconditions.checkArgument(vertices.containsKey(from) && vertices.containsKey(to)); adjacencyList.put(from, to); vertices.put(to, vertices.get( 
+PRED: from
+TARG: to
+) + 1); }'
+_________________________________
+91
+b'JAVA_CONSTRUCT:Headers removeUnmodifiableHeaders(Headers headers) { Headers washedHeaders = new Headers(); Set<String> usableHeaders = new HashSet<>(headers.keySet()); usableHeaders.removeAll(unmodifiableHeaders); for (String headerName : usableHeaders) { if (headers.contains(headerName)) { washedHeaders = washedHeaders.add(headers.getHeaders( 
+PRED: headerName
+TARG: (headerName)
+)); } } return washedHeaders; }'
+_________________________________
+92
+b'JAVA_CONSTRUCT:@Override public void writeObjectId(final String name, final ObjectId objectId) { notNull("name", name); notNull( 
+PRED: "objectId", objectId
+TARG: "value", objectId
+); writeName(name); writeObjectId(objectId); }'
+_________________________________
+93
+b'JAVA_CONSTRUCT:@Override public void serialize(XMLExtendedStreamWriter writer, RestStoreConfiguration configuration) throws XMLStreamException { writer.writeStartElement(Element.REST_STORE); configuration.attributes().write(writer); writeCommonStoreSubAttributes(writer, configuration); writeServer(writer, configuration); writeConnectionPool( 
+PRED: writer, configuration
+TARG: writer, configuration.connectionPool()
+); writeCommonStoreElements(writer, configuration); writer.writeEndElement(); }'
+_________________________________
+94
+b'JAVA_CONSTRUCT:private Object addNTServiceParameter(NTService ntService, String key, String value) { if ("runAsNT".equals(key)) { ntService.setRunAsNT( 
+PRED: value
+TARG: Boolean.parseBoolean(value)
+); } else if ("startupType".equals(key)) { ntService.setStartupType(value); } else if ("loginAs".equals(key)) { ntService.setLoginAs(value); } else if ("password".equals(key)) { ntService.setPassword(value); } return ntService; }'
+_________________________________
+95
+b'JAVA_TOKEN:public CodeSearchSupport fromCode(String codeString) throws IllegalArgumentException { if (codeString == null || "".equals(codeString)) return null; if ("explicit".equals(codeString)) return 
+PRED: CodeSearchSupport.explicit;
+TARG: CodeSearchSupport.EXPLICIT;
+ if ("all".equals(codeString)) return CodeSearchSupport.ALL; throw new IllegalArgumentException("Unknown CodeSearchSupport code \'"+codeString+"\'"); }'
+_________________________________
+96
+b'ANDROID_CONSTRUCT:public void handlingListenerSkipsNonHandlingListener() throws Exception { compositeTouchListener.addListener(handlingTouchListener); compositeTouchListener.addListener(nonHandlingTouchListener); boolean handled = compositeTouchListener.onTouch(view, motionEvent); assertTrue(handled); verify(handlingTouchListener).onTouch(view, motionEvent); verify( 
+PRED: nonHandlingTouchListener
+TARG: nonHandlingTouchListener, never()
+).onTouch(view, motionEvent); }'
+_________________________________
+97
+b'JAVA_TOKEN:@Override public int getAttributeListValue(String namespace, String attribute, String[] options, int defaultValue) { String attr = getAttribute(namespace, attribute); if (attr == null) { return 
+PRED: defaultValue;
+TARG: 0;
+ } List<String> optList = Arrays.asList(options); int index = optList.indexOf(attr); if (index == -1) { return defaultValue; } return index; }'
+_________________________________
+98
+b'JAVA_TOKEN:@SuppressWarnings("squid:S3516") private Void executeAutoCleanup() { systemManagement.forEachTenant(tenant -> cleanupTasks.forEach(task -> { final Lock lock = obtainLock(task, tenant); if (!lock.tryLock()) { return 
+PRED: null;
+TARG: ;
+ } try { task.run(); } catch (final RuntimeException e) { LOGGER.error("Cleanup task failed.", e); } finally { lock.unlock(); } })); return null; }'
+_________________________________
+99
+b'ANDROID_CONSTRUCT:void sendHitEdgeEvent(Edge edge) { ScrollPaneEvent event = Pools.obtain(ScrollPaneEvent.class); event.setEdge(edge); fire(event); Pools.free( 
+PRED: event
+TARG: edge
+); }'
+_________________________________
+100
+b'JAVA_CONSTRUCT:public static boolean serialInclude(Doc doc) { if (doc == null) { return false; } return doc.isClass() ? serialClassInclude( 
+PRED: doc
+TARG: (ClassDoc)doc
+) : serialDocInclude(doc); }'
+_________________________________
+101
+b'JAVA_CONSTRUCT:@Override public List<String> getEurekaServerServiceUrls(String myZone) { String serviceUrls = configInstance.getStringProperty( namespace + CONFIG_EUREKA_SERVER_SERVICE_URL_PREFIX + "." + myZone, null).get(); if (serviceUrls == null || serviceUrls.isEmpty()) { serviceUrls = configInstance.getStringProperty( namespace + CONFIG_EUREKA_SERVER_SERVICE_URL_PREFIX + ".default", null).get(); } if (serviceUrls != null) { return Arrays.asList( 
+PRED: serviceUrls
+TARG: serviceUrls.split(URL_SEPARATOR)
+); } return new ArrayList<String>(); }'
+_________________________________
+102
+b'JAVA_TOKEN:void addSpecificPostalCode (@Nonnull @Nonempty final String sSpecificPostalCode) { ValueEnforcer.notEmpty (sSpecificPostalCode 
+PRED: , "PostalCode");
+TARG: , "SpecificPostalCode");
+ ValueEnforcer.isTrue (isValidPostalCode (sSpecificPostalCode), () -> "The passed code \'" + sSpecificPostalCode + "\' is not valid according to the rules!"); m_aSpecificPostalCodes.add (sSpecificPostalCode); }'
+_________________________________
+103
+b'ANDROID_CONSTRUCT:public static GCMData parse(Bundle bundle){ GCMData gcm = new GCMData(); gcm.setTrainID(bundle.getString("trainId")); gcm.setType(bundle.getString("type")); gcm.setDelayTime(bundle.getInt("delayTime")); gcm.setName(bundle.getString( 
+PRED: "name"
+TARG: "trainDesc"
+)); gcm.setDataBundle(bundle); return gcm; }'
+_________________________________
+104
+b'ANDROID_TOKEN:public void setLoadingVisible(boolean showActionbarAnimation, boolean showContentFrameAnimation) { setLoadingVisible(showActionbarAnimation); if (showContentFrameAnimation) { loadingAnimationContainer.setVisibility(View.VISIBLE); loadingAnimationText.setVisibility 
+PRED: (View.VISIBLE);
+TARG: (View.GONE);
+ } else { loadingAnimationContainer.setVisibility(View.GONE); loadingAnimationText.setVisibility(View.GONE); } }'
+_________________________________
+105
+b'JAVA_CONSTRUCT:public String[] getSynonyms(String string) { if (SYNONYM_MAP != null) { return SYNONYM_MAP.getSynonyms( 
+PRED: string
+TARG: string.toLowerCase()
+); } else { return new String[0]; } }'
+_________________________________
+106
+b'JAVA_CONSTRUCT:private void restoreNestedVariables() { if (nestedVars != null) { Iterator iter = nestedVars.iterator(); while (iter.hasNext()) { String varName = (String) iter.next(); varName = findAlias(varName); Object obj = originalNestedVars.get(varName); if (obj != null) { invokingJspCtxt.setAttribute(varName, obj); } else { invokingJspCtxt.removeAttribute( 
+PRED: varName
+TARG: varName, PAGE_SCOPE
+); } } } }'
+_________________________________
+107
+b'JAVA_TOKEN:public void dump(final String pad) { System.out.println(pad + this); Node child = firstChild(); if (child != null) { child.dump(pad + " "); } Node sibling = nextSibling(); if (sibling != null) { sibling 
+PRED: .dump(pad + " ");
+TARG: .dump(pad);
+ } }'
+_________________________________
+108
+b'JAVA_TOKEN:public synchronized void stopContainer(String containerId) throws DockerException, InterruptedException { int stopTimeoutSec = getConfig().getDockerStopTimeoutSec(); if (stopTimeoutSec == 0) { log.trace("Killing container {}", containerId); dockerClient.killContainer 
+PRED: (containerId);
+TARG: (containerId, SIGKILL);
+ } else { log.trace("Stopping container {} (timeout {} seconds)", containerId, stopTimeoutSec); dockerClient.stopContainer(containerId, stopTimeoutSec); } }'
+_________________________________
+109
+b'JAVA_TOKEN:public FourColors getCommonInteriorColors(CommonControlState type) { switch (type) { case DISABLED: return super.getCommonInteriorColors(CommonControlState.DISABLED); case ENABLED: case PRESSED: return super.getCommonInteriorColors(CommonControlState 
+PRED: .PRESSED);
+TARG: .ENABLED);
+ } return null; }'
+_________________________________
+110
+b'ANDROID_CONSTRUCT:public void readEntity(Cursor cursor, GenericDataDirectoryDB entity, int offset) { entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0)); entity.setDeviceId(cursor.getLong(offset + 1)); entity.setDay_start_timestamp(cursor.getLong(offset + 2)); entity.setIndex_timestamp(cursor.getLong( 
+PRED: offset +  ⁇ 
+TARG: offset + 3
+)); entity.setLastest_accessed_timestamp(cursor.getLong(offset + 4)); }'
+_________________________________
+111
+b'ANDROID_CONSTRUCT:private void destroyShader(int vertexShader, int fragmentShader, int program) { if (vertexShader != 0) { GLES20.glDeleteShader(vertexShader); } if (fragmentShader != 0) { GLES20.glDeleteShader(fragmentShader); } if (program != 0) { GLES20.glDeleteProgram( 
+PRED: program
+TARG: vertexShader
+); } }'
+_________________________________
+112
+b'ANDROID_TOKEN:public static ConnectionMode getConnectionMode(Context context) { ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE); NetworkInfo wifiInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI); if (wifiInfo.isConnected()) { return ConnectionMode.WIFI; } NetworkInfo mobileInfo = connManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE); if (mobileInfo.isConnected()) { return ConnectionMode 
+PRED: .MOBILE;
+TARG: .CELLULAR;
+ } return ConnectionMode.OFFLINE; }'
+_________________________________
+113
+b'JAVA_TOKEN:public byte[] getSoftware() { if (software == null) { return null; } byte[] copy = new byte[software.length]; System.arraycopy(software, 0, copy, 0, software.length); return 
+PRED: copy;
+TARG: software;
+ }'
+_________________________________
+114
+b'ANDROID_CONSTRUCT:public void onEventMainThread(PhotoEvent event) { if (view != null){ switch (event.getType()){ case PhotoEvent.UPLOAD_INIT: view.onUploadInit(); break; case PhotoEvent.UPLOAD_COMPLETE: view.handleProgressBar( 
+PRED: true
+TARG: false
+); view.onUploadComplete(); break; case PhotoEvent.UPLOAD_ERROR: view.handleProgressBar(false); view.onUploadError(event.getError()); break; } } }'
+_________________________________
+115
+b'ANDROID_TOKEN:public void onAnimationEnd(Animation animation) { et.setEnabled(true); et.requestFocus(); clearText(); dvNew.clearAnimation(); dvNew.setVisibility 
+PRED: (View.VISIBLE);
+TARG: (View.GONE);
+ dv.clearAnimation(); dv.setVisibility(View.VISIBLE); }'
+_________________________________
+116
+b'JAVA_CONSTRUCT:public boolean containsFile(SftpFile f) { return unchangedFiles.contains(f) || newFiles.contains(f) || updatedFiles.contains(f) || deletedFiles.contains(f) || recursedDirectories.contains( 
+PRED: f
+TARG: f.getAbsolutePath()
+) || failedTransfers.containsKey(f); }'
+_________________________________
+117
+b'JAVA_TOKEN:private void createResourceURIForClass(Class<?> clazz, StringBuilder uriBuilder) { if (clazz.isArray()) { createResourceURIForClass(clazz.getComponentType(), uriBuilder); } else if (clazz.isMemberClass()) { createResourceURIForClass 
+PRED: (clazz.isMemberClass(), uriBuilder);
+TARG: (clazz.getDeclaringClass(), uriBuilder);
+ } else if (clazz.isPrimitive()) { uriBuilder.append(URIHelperConstants.PRIMITIVES); } else { uriBuilder.append(URIHelperConstants.OBJECTS).append(clazz.getName()); } }'
+_________________________________
+118
+b'JAVA_CONSTRUCT:public static String toIpPort(String ipAddress, int port) throws UnknownHostException { if (ipAddress == null) { return null; } InetAddress addr = InetAddress.getByName( 
+PRED: ipAddress
+TARG: ipAddress.trim()
+); return getHostAddress(addr) + ":" + port; }'
+_________________________________
+119
+b'JAVA_TOKEN:private void deleteUploadedFiles() { if (currentUploadDir != null) { try { FileUtils.deleteDirectory(currentUploadDir 
+PRED: );
+TARG: .toFile());
+ } catch (IOException e) { LOG.warn("Could not cleanup uploaded files.", e); } } }'
+_________________________________
+120
+b'JAVA_TOKEN:public void add(long sequenceNumber, ValueType valueType, Slice key, Slice value) { requireNonNull(valueType, "valueType is null"); requireNonNull(key, "key is null"); requireNonNull 
+PRED: (value, "value is null");
+TARG: (valueType, "valueType is null");
+ InternalKey internalKey = new InternalKey(key, sequenceNumber, valueType); table.put(internalKey, value); approximateMemoryUsage.addAndGet(key.length() + SIZE_OF_LONG + value.length()); }'
+_________________________________
+121
+b'ANDROID_TOKEN:private void applyPresetReverbStates(PresetReverbStateStore states) { final boolean enabled = states.isEnabled(); final IPresetReverb presetreverb = (enabled) ? createPresetReverb() : getPresetReverb(); if (presetreverb == null) return; presetreverb.setProperties(states.getSettings()); presetreverb.setEnabled(enabled); if (!enabled) { releasePresetReverb( 
+PRED: presetreverb);
+TARG: );
+ } }'
+_________________________________
+122
+b'JAVA_TOKEN:public static Ticker adaptTicker(BTCTradeTicker btcTradeTicker, CurrencyPair currencyPair) { return new Ticker.Builder() .currencyPair(currencyPair) .high(btcTradeTicker.getHigh()) .low(btcTradeTicker.getLow()) .bid(btcTradeTicker.getBuy()) .ask(btcTradeTicker.getSell()) .last(btcTradeTicker.getLast()) .volume(btcTradeTicker 
+PRED: .getVolume())
+TARG: .getVol())
+ .build(); }'
+_________________________________
+123
+b'ANDROID_TOKEN:public void setPosition(float x, float y, float nxa, float nya) { bb.set(x, y, x + width, y + height); this.x = x; this.y = y; this 
+PRED: .nxa = nxa;
+TARG: .xa = nxa;
+ this.ya = nya; }'
+_________________________________
+124
+b'JAVA_CONSTRUCT:public String serialize(VerificationSequence verificationSequence) { try { return objectMapper .writerWithDefaultPrettyPrinter() .writeValueAsString( 
+PRED: verificationSequence
+TARG: new VerificationSequenceDTO(verificationSequence)
+); } catch (Exception e) { mockServerLogger.error("Exception while serializing verificationSequence to JSON with value " + verificationSequence, e); throw new RuntimeException("Exception while serializing verificationSequence to JSON with value " + verificationSequence, e); } }'
+_________________________________
+125
+b'JAVA_CONSTRUCT:@Override public VisitorAction visit(DecisionTree decisionTree){ decisionTree.setNode(filter(decisionTree.getNode())); return super.visit( 
+PRED: decisionTree
+TARG: decisionTree.getNode()
+); }'
+_________________________________
+126
+b'ANDROID_CONSTRUCT:public void onRightPress() { if (AppState.get().tapZoneRight == AppState.TAP_DO_NOTHING) { return; } if (AppState.get().tapZoneRight == AppState.TAP_NEXT_PAGE) { ui.nextChose(false); } else { ui.prevChose( 
+PRED: true
+TARG: false
+); } }'
+_________________________________
+127
+b'ANDROID_TOKEN:protected void executeBadge(int badgeCount) throws ShortcutBadgeException { Intent intent1 = new Intent(INTENT_SET_NOTIFICATION); ComponentName localComponentName = new ComponentName(getContextPackageName(), getEntryActivityName()); intent1.putExtra(EXTRA_COMPONENT, localComponentName 
+PRED: );
+TARG: .flattenToShortString());
+ intent1.putExtra(EXTRA_COUNT, badgeCount); mContext.sendBroadcast(intent1); Intent intent = new Intent(INTENT_UPDATE_SHORTCUT); intent.putExtra(PACKAGENAME, getContextPackageName()); intent.putExtra(COUNT, badgeCount); mContext.sendBroadcast(intent); }'
+_________________________________
+128
+b'ANDROID_TOKEN:public boolean onCreateOptionsMenu(final Menu menu) { getMenuInflater().inflate(R.menu.choose_contact, menu); final MenuItem menuSearchView = menu.findItem(R.id.action_search); final View mSearchView = menuSearchView.getActionView(); mSearchEditText = mSearchView.findViewById(R.id.search_field); mSearchEditText.addTextChangedListener(mSearchTextWatcher); mSearchEditText.setHint(R.string.search_contacts); mSearchEditText.setOnEditorActionListener(this); menuSearchView.setOnActionExpandListener 
+PRED: (this);
+TARG: (mOnActionExpandListener);
+ return true; }'
+_________________________________
+129
+b'JAVA_CONSTRUCT:private MUCLightBlockingIQ getBlockingList(DomainBareJid mucLightService) throws NoResponseException, XMPPErrorException, InterruptedException, NotConnectedException { MUCLightBlockingIQ mucLightBlockingIQ = new MUCLightBlockingIQ(null, null); mucLightBlockingIQ.setType(Type.get); mucLightBlockingIQ.setTo(mucLightService); StanzaFilter responseFilter = new IQReplyFilter(mucLightBlockingIQ, connection()); IQ responseIq = connection().createStanzaCollectorAndSend( 
+PRED: responseFilter
+TARG: responseFilter, mucLightBlockingIQ
+) .nextResultOrThrow(); MUCLightBlockingIQ mucLightBlockingIQResult = (MUCLightBlockingIQ) responseIq; return mucLightBlockingIQResult; }'
+_________________________________
+130
+b'JAVA_TOKEN:public static Class<?> getOutputType(AggregationFunction aggregationType, Class<?> propertyType) { if (aggregationType == AggregationFunction.AVG) { return Double.class; } else if (aggregationType == AggregationFunction.COUNT) { return Long.class; } else if (aggregationType == AggregationFunction.SUM) { return SumAccumulator 
+PRED: .class;
+TARG: .getOutputType(propertyType);
+ } return propertyType; }'
+_________________________________
+131
+b'JAVA_CONSTRUCT:public static Object invokeOverloaded(Object object, String name, Object... args) { ClassMeta classMeta = ClassMeta.classMeta(object.getClass()); Iterable<MethodAccess> invokers = classMeta.methods(name); for (MethodAccess m : invokers) { if (m.respondsTo( 
+PRED: object
+TARG: args
+)) { return m.invoke(object, args); } } return die(Object.class, "Unable to invoke method", name, "on object", object, "with arguments", args); }'
+_________________________________
+132
+b'JAVA_CONSTRUCT:private List<Task> getAppTasks(ApplicationDefinition appDef) { List<Task> appTasks = new ArrayList<>(); try { StorageService service = SchemaService.instance().getStorageService(appDef); Collection<Task> appTaskColl = service.getAppTasks(appDef); if (appTaskColl != null) { appTasks.addAll( 
+PRED: appTaskColl
+TARG: service.getAppTasks(appDef)
+); } } catch (IllegalArgumentException e) { } return appTasks; }'
+_________________________________
+133
+b'JAVA_CONSTRUCT:public ProcessExecutor redirectErrorAlsoTo(OutputStream output) { streams(redirectErrorAlsoTo( 
+PRED: output
+TARG: pumps(), output
+)); redirectErrorStream(false); return this; }'
+_________________________________
+134
+b'JAVA_CONSTRUCT:private void createResourceURIForClass(Class<?> clazz, StringBuilder uriBuilder) { if (clazz.isArray()) { createResourceURIForClass(clazz.getComponentType(), uriBuilder); } else if (clazz.isMemberClass()) { createResourceURIForClass( 
+PRED: clazz.isMemberClass(), uriBuilder
+TARG: clazz.getDeclaringClass(), uriBuilder
+); } else if (clazz.isPrimitive()) { uriBuilder.append(URIHelperConstants.PRIMITIVES); } else { uriBuilder.append(URIHelperConstants.OBJECTS).append(clazz.getName()); } }'
+_________________________________
+135
+b'ANDROID_TOKEN:private static float satForPos(float x, float y, float radiusPx) { final double r = radiusPx - 1; final double dx = (r - x) / r; final double dy = (r - y) / r; final double sat = dx * dx + dy * dy; return 
+PRED: sat;
+TARG: (float) sat;
+ }'
+_________________________________
+136
+b'JAVA_TOKEN:@Override public CollectionWrapper<TranslatedCSNodeWrapper> createTranslatedCSNodes( CollectionWrapper<TranslatedCSNodeWrapper> nodes) { notifyCreateEntityCollection(nodes); for (final TranslatedCSNodeWrapper topic : nodes.getItems()) { getEntityManager().persist( 
+PRED: topic);
+TARG: topic.unwrap());
+ } getEntityManager().flush(); return nodes; }'
+_________________________________
+137
+b'JAVA_TOKEN:public ClassModelField getField(String _name) { for (final ClassModelField entry : fields) { if (entry.getName().equals(_name)) { return 
+PRED: entry;
+TARG: (entry);
+ } } return superClazz.getField(_name); }'
+_________________________________
+138
+b'ANDROID_CONSTRUCT:private Interval getNextInterval() { Calendar nextNoon = (Calendar) _noon.clone(); nextNoon.add(Calendar.DATE, 1); if (_current.is_day) return new Interval(_current.end, _calculator.getSunriseFor(nextNoon).getTimeInMillis(), false); else return new Interval(_calculator.getSunriseFor( 
+PRED: nextNoon
+TARG: _noon
+).getTimeInMillis(), _calculator.getSunsetFor(_noon).getTimeInMillis(), true); }'
+_________________________________
+139
+b'ANDROID_TOKEN:public CharSequence getPageTitle(int position) { switch (position) { case 0: return context.getString(R.string.location); case 1: return context.getString(R.string.enter); case 2: return context.getString(R.string.exit); case 3: return context.getString(R.string.summary); } return "" 
+PRED: ;
+TARG: + (position + 1);
+ }'
+_________________________________
+140
+b'JAVA_TOKEN:private void restoreNestedVariables() { if (nestedVars != null) { Iterator iter = nestedVars.iterator(); while (iter.hasNext()) { String varName = (String) iter.next(); varName = findAlias(varName); Object obj = originalNestedVars.get(varName); if (obj != null) { invokingJspCtxt.setAttribute(varName, obj); } else { invokingJspCtxt.removeAttribute 
+PRED: (varName);
+TARG: (varName, PAGE_SCOPE);
+ } } } }'
+_________________________________
+141
+b'JAVA_TOKEN:private void loadWorkload(Map<String, Object> applicationMap, QualityInformation requirements) { if (requirements.getWorkload() <= 0.0) { requirements.setWorkloadMinute(YAMLoptimizerParser.getApplicationWorkload(applicationMap)); } if (!requirements.hasValidWorkload()) { log.error( "Valid workload information not found in the input document. Loading dummy quality requirements for testing purposes"); requirements.setWorkloadMinute(YAMLoptimizerParser.getApplicationWorkloadTest 
+PRED: (applicationMap));
+TARG: ());
+ } }'
+_________________________________
+142
+b'JAVA_CONSTRUCT:@Override public List<WebElement> findElements(By by) { assertElementNotStale(); return parent.findElements( 
+PRED: by
+TARG: by, this
+); }'
+_________________________________
+143
+b'JAVA_CONSTRUCT:protected Timer createNonPersistentCalendarTimer(BeanO beanO, ParsedScheduleExpression parsedExpr, Serializable info) { final boolean isTraceOn = TraceComponent.isAnyTracingEnabled() && tc.isDebugEnabled(); if ( 
+PRED: isTraceOn && tc.isEntryEnabled()
+TARG: isTraceOn && tc.isDebugEnabled()
+) Tr.entry(tc, "createNonPersistentCalendarTimer : " + beanO); TimerNpImpl timer = new TimerNpImpl(beanO.getId(), parsedExpr, info); queueOrStartNpTimer(beanO, timer); if (isTraceOn && tc.isEntryEnabled()) Tr.exit(tc, "createNonPersistentCalendarTimer : " + timer); return timer; }'
+_________________________________
+144
+b'JAVA_CONSTRUCT:@Override public CompletableFuture<Boolean> acquireLease(CompleteLease lease) { CompletableFuture<Boolean> future = null; try { future = CompletableFuture.completedFuture(acquireLeaseInternal( 
+PRED: lease
+TARG: (AzureBlobLease) lease
+)); } catch (IOException | StorageException e) { TRACE_LOGGER.warn(this.hostContext.withHostAndPartition(lease, "Failure acquiring lease"), e); future = new CompletableFuture<Boolean>(); future.completeExceptionally(LoggingUtils.wrapException(e, EventProcessorHostActionStrings.ACQUIRING_LEASE)); } return future; }'
+_________________________________
+145
+b'ANDROID_CONSTRUCT:private SignImage parseSignImage(Cursor cursor) { SignImage image = new SignImage(); image.setId((cursor.getInt(0))); image.setSearchname(cursor.getString(1)); image.setTitle(cursor.getString(2)); image.setHref(cursor.getString( 
+PRED:  ⁇ 
+TARG: 3
+)); image.setFilename(cursor.getString(4)); image.setShortTitle(cursor.getString(5)); return image; }'
+_________________________________
+146
+b'ANDROID_CONSTRUCT:private void createBackgroundBitmap(int width, int height) { background = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888); Canvas canvas = new Canvas(background); drawHeader(canvas); drawNewGameButton( 
+PRED: canvas
+TARG: canvas, false
+); drawShareButton(canvas); drawLeaderboardButton(canvas); drawBackground(canvas); drawBackgroundGrid(canvas); drawInstructions(canvas); }'
+_________________________________
+147
+b'JAVA_CONSTRUCT:@Override protected OpenshiftRoleBinding handleCreate(OpenshiftRoleBinding resource) throws ExecutionException, InterruptedException, KubernetesClientException, IOException { return super.handleCreate( 
+PRED: resource
+TARG: enrichRoleBinding(resource)
+); }'
+_________________________________
+148
+b'JAVA_TOKEN:private void animateRemoveImpl(final ViewHolder holder) { final ViewPropertyAnimatorCompat animation = removeAnimation(holder); mRemoveAnimations.add(holder); animation.setListener(new VpaListenerAdapter() { @Override public void onAnimationStart(View view) { dispatchRemoveStarting(holder); } @Override public void onAnimationEnd(View view) { animation.setListener(null); removeAnimationCleanup(holder); dispatchRemoveFinished(holder); mRemoveAnimations.remove(holder); dispatchFinishedWhenDone(); } }) 
+PRED: ;
+TARG: .start();
+ }'
+_________________________________
+149
+b'ANDROID_CONSTRUCT:public void removeAssignments(DBObject b) { for (DBObject o : getAssignedBuoys(b)) { removeAssignment(o, b); } for (DBObject o : getAssignedBoats(b)) { removeAssignment( 
+PRED: o, b
+TARG: b, o
+); } }'
+_________________________________
+150
+b'ANDROID_CONSTRUCT:public void onServiceConnected(ComponentName name, IBinder service) { this.service = IEnvBoardService.Stub.asInterface( 
+PRED: service
+TARG: (IBinder) service
+); SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this); try { this.service.registerServiceCallback(this); this.service.setUploadMode(preferences.getBoolean("pref_upload_mode_wifi_only", true)); } catch (RemoteException e) { e.printStackTrace(); } startBluetoothScanIfReady(); }'
+_________________________________
+151
+b'ANDROID_CONSTRUCT:private void createPhotoEntityDao() { try { mPhotosDao = DaoManager.createDao( 
+PRED: PhotoEntity.class
+TARG: mConnectionSource, PhotoEntity.class
+); mPhotosDao.setObjectCache(true); } catch (SQLException e) { Log.wtf(LOG_TAG_DB, "Creation of Dao<" + PhotoEntity.class + "> failed", e); } }'
+_________________________________
+152
+b'JAVA_CONSTRUCT:@Override public OAuth2AccessToken accessToken(HttpRequestExecutor executor) throws IOException, ProtocolError, ProtocolException { return mClient.accessToken( 
+PRED: executor
+TARG: new ClientCredentialsTokenRequest(mScope), executor
+); }'
+_________________________________
+153
+b'JAVA_CONSTRUCT:protected GraphResults<Id, M> doLoad(Collection<Id> docIds) { Check.notNull(docIds, "docIds"); final boolean optimized = true; BooleanExpression predicate = predicate(IN, options.version.docId, constant(docIds)) .and(options.version.ordinal.isNotNull()); List<Group> versionsAndParents = fetchVersionsAndParents(optimized, predicate, options.version.ordinal.asc()); return toGraphResults(fetch( 
+PRED: versionsAndParents
+TARG: versionsAndParents, optimized, predicate
+)); }'
+_________________________________
+154
+b'ANDROID_CONSTRUCT:private Player cursorToPlayer(Cursor cursor) { Player player = new Player(); player.setId(cursor.getLong(0)); player.setPlayer(cursor.getString(1)); player.setFood(cursor.getInt(2)); player.setLives(cursor.getInt( 
+PRED:  ⁇ 
+TARG: 3
+)); player.setLevel(cursor.getInt(4)); player.setActive(cursor.getString(5)); return player; }'
+_________________________________
+155
+b'JAVA_CONSTRUCT:public PaletteAssert hasDarkVibrantColor(int color) { isNotNull(); int actualColor = actual.getDarkVibrantColor(getAnotherColor(color)); assertThat( 
+PRED: actualColor
+TARG: color
+) .overridingErrorMessage("Expected dark vibrant color <%s> but was <%s>", color, actualColor) .isEqualTo(actualColor); return this; }'
+_________________________________
+156
+b'JAVA_CONSTRUCT:protected ThirdPartyAlpnNegotiator tryToRegisterAlpnNegotiator(SSLEngine engine, SSLConnectionLink link, boolean useAlpn) { if (isNativeAlpnActive()) { if (useAlpn) { registerNativeAlpn( 
+PRED: engine, link
+TARG: engine
+); } } else if (isIbmAlpnActive()) { registerIbmAlpn(engine, useAlpn); } else if (this.isJettyAlpnActive() && useAlpn) { return registerJettyAlpn(engine, link); } else if (this.isGrizzlyAlpnActive() && useAlpn) { return registerGrizzlyAlpn(engine, link); } return null; }'
+_________________________________
+157
+b'JAVA_CONSTRUCT:public void add(long sequenceNumber, ValueType valueType, Slice key, Slice value) { requireNonNull(valueType, "valueType is null"); requireNonNull(key, "key is null"); requireNonNull( 
+PRED: value, "value is null"
+TARG: valueType, "valueType is null"
+); InternalKey internalKey = new InternalKey(key, sequenceNumber, valueType); table.put(internalKey, value); approximateMemoryUsage.addAndGet(key.length() + SIZE_OF_LONG + value.length()); }'
+_________________________________
+158
+b'JAVA_CONSTRUCT:@Override public Object invoke(ELContext context, Object[] params) throws NullPointerException, PropertyNotFoundException, MethodNotFoundException, ELException { try { return methodExpressionOneArg.invoke(context, params); } catch (MethodNotFoundException mnfe) { return methodExpressionZeroArg.invoke( 
+PRED: context, params
+TARG: context, EMPTY_PARAMS
+); } }'
+_________________________________
+159
+b'JAVA_CONSTRUCT:@SuppressWarnings("unchecked") public static <T> T handle(final Environment environment, final String prefix, final Class<T> targetClass) { switch (springBootVersion) { case 1: return (T) v1( 
+PRED: environment, prefix, targetClass
+TARG: environment, prefix
+); default: return (T) v2(environment, prefix, targetClass); } }'
+_________________________________
+160
+b'JAVA_TOKEN:private void closeDb() throws PersistitException { if (persistit != null) { persistit.releaseExchange(exchange); exchange = null; volume.close(); volume.delete(); volume = null; persistit.close 
+PRED: ();
+TARG: (false);
+ persistit = null; } if (temporaryFolder != null) { temporaryFolder.delete(); } }'
+_________________________________
+161
+b'JAVA_TOKEN:private Environment environment(MutablePropertySources incoming) { StandardEnvironment environment = new StandardEnvironment(); for (PropertySource<?> source : environment.getPropertySources()) { environment.getPropertySources().remove 
+PRED: (source);
+TARG: (source.getName());
+ } for (PropertySource<?> source : incoming) { environment.getPropertySources().addLast(source); } return environment; }'
+_________________________________
+162
+b'JAVA_CONSTRUCT:@Override public void exportXml(final StringBuilder out) { if (isParsed()) { out.append("<"); if (keychar != null) out.append( 
+PRED: keychar
+TARG: keychar.charValue()
+); else if (keyword != null) out.append(keyword); out.append("/>"); } }'
+_________________________________
+163
+b'JAVA_CONSTRUCT:@Override public double duration(long task, TimeUnit unit) { Collection<Sample> childSamples = timings.get(task); if (childSamples != null) { return childSamples.stream().findFirst().map(c -> c.duration( 
+PRED: task, unit
+TARG: unit
+)).orElse(-1.0); } return -1.0; }'
+_________________________________
+164
+b'JAVA_CONSTRUCT:public void editMapping() { SQLPPTriplesMap mapping = mappingList.getSelectedValue(); if (mapping == null) { return; } JDialog dialog = new JDialog(); dialog.setTitle("Edit Mapping"); dialog.setModal(true); NewMappingDialogPanel panel = new NewMappingDialogPanel(apic, dialog, selectedSource); panel.setMapping(mapping); dialog.setContentPane(panel); dialog.setSize(600, 500); dialog.setLocationRelativeTo( 
+PRED: null
+TARG: this
+); dialog.setVisible(true); }'
+_________________________________
+165
+b'JAVA_TOKEN:@Override public void getClient(String organizationId, String clientId, String clientVersion, IAsyncResultHandler<Client> handler) { try { QueryRunner run = new QueryRunner(ds); Client client = run.query("SELECT bean FROM gw_clients WHERE org_id = ? AND id = ? AND version = ?", Handlers.CLIENT_HANDLER, organizationId, clientId, clientVersion); handler.handle(AsyncResultImpl.create(client)); } catch (SQLException e) { handler.handle(AsyncResultImpl.create 
+PRED: (e));
+TARG: (e, Client.class));
+ } }'
+_________________________________
+166
+b'JAVA_TOKEN:private static boolean isInternal(String clsName) { boolean internal = false; for (String internalPackage : internalPackages) { if (clsName.startsWith(internalPackage)) { internal = true; break; } } if (internal) { for (String externalPackage : externalPackages) { if (clsName.startsWith(externalPackage)) { internal = 
+PRED: true;
+TARG: false;
+ break; } } } return internal; }'
+_________________________________
+167
+b'JAVA_CONSTRUCT:protected boolean hasVariableWithSameNameInParent(CmmnExecution execution, String variableName) { while(execution != null) { if (execution.getId().equals( 
+PRED: variableName
+TARG: getId()
+)) { return false; } TypedValue variableTypedValue = execution.getVariableLocalTyped(variableName); if (variableTypedValue != null) { return true; } execution = execution.getParent(); } return false; }'
+_________________________________
+168
+b'JAVA_CONSTRUCT:protected void setDetachedCriteriaValue(QueryableCriteria value, PropertyCriterion pc) { DetachedCriteria hibernateDetachedCriteria = HibernateCriteriaBuilder.getHibernateDetachedCriteria( 
+PRED: value
+TARG: this, value
+); pc.setValue(hibernateDetachedCriteria); }'
+_________________________________
+169
+b'JAVA_CONSTRUCT:private static void showScene(TreeScene scene, String title) { JScrollPane panel = new JScrollPane(scene.createView()); JDialog dialog = new JDialog(); dialog.setModal(true); dialog.setTitle(title); dialog.add( 
+PRED: panel
+TARG: panel, BorderLayout.CENTER
+); dialog.setSize(800, 600); dialog.setVisible(true); dialog.dispose(); }'
+_________________________________
+170
+b'ANDROID_CONSTRUCT:private void initAppBarLayout() { appBarLayout.addOnOffsetChangedListener(new AppBarStateChangeListener() { @Override public void onStateChanged(AppBarLayout appBarLayout, State state) { switch (state) { case COLLAPSED: showToolbarTitle(true); break; case EXPANDED: hideToolbarTitle( 
+PRED: false
+TARG: true
+); break; } } }); appBarLayout.setExpanded(false); }'
+_________________________________
+171
+b'ANDROID_CONSTRUCT:public void setAutoMode(boolean enabled) { manualDirectionController.setEnabled( 
+PRED: enabled
+TARG: !enabled
+); sensorOrientationController.setEnabled(enabled); if (model != null) { model.setAutoUpdatePointing(enabled); } usingAutoMode = enabled; }'
+_________________________________
+172
+b'JAVA_CONSTRUCT:@Override public RetryDecision onUnavailable(Statement stmnt, ConsistencyLevel cl, int requiredResponses, int receivedResponses, int uTime) { if (uTime < unavailableAttempts) { LOG.info(String.format("Retrying on unavailable: stmnt %s, consistency %s, " + "requiredResponse %d, receivedResponse %d, rTime %d", stmnt, cl, requiredResponses, receivedResponses, uTime)); return RetryDecision.retry( 
+PRED: cl
+TARG: ConsistencyLevel.ONE
+); } return RetryDecision.rethrow(); }'
+_________________________________
+173
+b'JAVA_CONSTRUCT:public void receive(String data) { String[] split = data.split(":", 1); if (split.length > 1) handlers.get( 
+PRED: ObserverWrapper.DEFAULT
+TARG: split[0]
+).dispatch(split[0], split[1]); else handlers.get(ObserverWrapper.DEFAULT).dispatch(null, split[0]); }'
+_________________________________
+174
+b'JAVA_CONSTRUCT:private static boolean checkIsBuiltInMethodCall(MethodCallExpression expr) { if (!AstUtil.isThisOrSuperExpression( 
+PRED: expr
+TARG: expr.getObjectExpression()
+)) return false; return Identifiers.BUILT_IN_METHODS.contains(expr.getMethodAsString()); }'
+_________________________________
+175
+b'ANDROID_CONSTRUCT:public void processPackage(String playerId, byte[] messageData) { ByteBuffer buffer = ByteBuffer.wrap(messageData); byte packetType = buffer.get(); switch (packetType) { case MOVE: updateEntity(playerId, buffer); break; case BULLET: receiveBullet( 
+PRED: buffer
+TARG: playerId, buffer
+); break; case OBSTACLE: receiveObstacle(buffer); default: Gdx.app.debug(TAG, "processPackage: DEFAULT"); } }'
+_________________________________
+176
+b'ANDROID_CONSTRUCT:protected void setButtonClickIntent(String buttonInt, final String intentTarget) { Button button = (Button) findViewById( 
+PRED: buttonInt
+TARG: Integer.parseInt(buttonInt)
+); button.setOnClickListener(new View.OnClickListener() { public void onClick(View v) { Intent intent = new Intent(intentTarget); startActivity(intent); } }); }'
+_________________________________
+177
+b'ANDROID_TOKEN:public Builder newBuilder() { Builder builder = new Builder(); builder.host_name = host_name; builder.results = 
+PRED: results;
+TARG: copyOf("results", results);
+ builder.show_notification = show_notification; builder.addUnknownFields(unknownFields()); return builder; }'
+_________________________________
+178
+b'ANDROID_TOKEN:public void onActivityResult(int requestCode, int resultCode) { if (currentState == ENABLE_BLUETOOTH && requestCode == BLUETOOTH_ENABLED && resultCode == Activity.RESULT_OK) { try { transition(ENABLE_BLUETOOTH 
+PRED: );
+TARG: .nextState);
+ } catch (InterruptedException e) { e.printStackTrace(); } } else if (currentState == LISTEN_FOR_CONNECTIONS && requestCode == BLUETOOTH_DISCOVERABLE && resultCode == Activity.RESULT_CANCELED) { try { transition(DISCONNECTED); } catch (InterruptedException e) { e.printStackTrace(); } } }'
+_________________________________
+179
+b'JAVA_CONSTRUCT:public void unregister() { final String methodName = "unregister()"; final boolean trace = TraceComponent.isAnyTracingEnabled(); if (trace && tc.isEntryEnabled()) Tr.entry(tc, methodName, this); if (reg != null) reg.unregister(); reg = null; if (trace && tc.isEntryEnabled()) Tr.exit( 
+PRED: tc, methodName
+TARG: tc, methodName, this
+); }'
+_________________________________
+180
+b'JAVA_TOKEN:@Override public long skip (final long nSkip) throws IOException { ValueEnforcer.isGE0 (nSkip, "SkipValue"); _ensureOpen (); if (nSkip == 0) return 0L; long nRealSkip = nSkip; final int nBufAvail = m_aBuf.length - m_nBufPos; if (nBufAvail > 0) { if (nRealSkip <= nBufAvail) { m_nBufPos += nRealSkip; return nRealSkip; } m_nBufPos = m_aBuf.length; nRealSkip -= nBufAvail; } return nBufAvail + super.skip 
+PRED: (nSkip);
+TARG: (nRealSkip);
+ }'
+_________________________________
+181
+b'ANDROID_TOKEN:private void onUserOffline(int uid, long updateDate) { if (lastUidState.containsKey(uid) && lastUidState.get(uid) >= updateDate) { return; } lastUidState.put(uid, updateDate); UserVM vm = getUserVM(uid); if (vm != null) { vm.getPresence().change(new UserPresence(UserPresence.State.OFFLINE)); } if (uidCancellables.containsKey(uid)) { uidCancellables.remove(uid 
+PRED: );
+TARG: ).cancel();
+ } }'
+_________________________________
+182
+b'ANDROID_TOKEN:public ICallHandler getHandler() { switch (sortBy) { case NameDurationAsc: case NameDurationDesc: return new GroupByNamePhoneCallHandler(!Utils.isNullOrEmpty(contactName)); case ByDays: case ByDaysDurationAsc: case ByDaysDurationDesc: return new GroupByDayCallHandler(); case ByMonths: case ByMonthsDurationAsc 
+PRED: :
+TARG: : case ByMonthsDurationDesc:
+ return new GroupByMonthCallHandler(); default: return new DefaultCallHandler(); } }'
+_________________________________
+183
+b'JAVA_CONSTRUCT:@Benchmark public void get(Blackhole bh) { for (int i : iterationIndexes) { bh.consume( 
+PRED: i
+TARG: genericIndexed.get(i)
+); } }'
+_________________________________
+184
+b'ANDROID_TOKEN:protected void onPostExecute(String result) { super.onPostExecute(result); if (boo_sce) { boo_sce = false; toastsettext("Successfully created folder"); rl_subbottom1.setVisibility 
+PRED: (View.VISIBLE);
+TARG: (View.GONE);
+ rl_subbottom2.setVisibility(View.VISIBLE); } downloadFile_listener(result); }'
+_________________________________
+185
+b'ANDROID_TOKEN:public String desc() { float dispDamage = (damageFactor(10000) / 100f) - 100f; switch (state){ case NORMAL 
+PRED: :
+TARG: : default:
+ return Messages.get(this, "angered_desc", Math.floor(power * 100f), dispDamage); case BERSERK: return Messages.get(this, "berserk_desc"); case RECOVERING: return Messages.get(this, "recovering_desc", levelRecovery); } }'
+_________________________________
+186
+b'ANDROID_TOKEN:public static float getMapFloat(Map map, String key, float def) { if (map == null) { return def; } try { Number n = (Number) map.get(key); if (n == null) { return 
+PRED: def;
+TARG: (def);
+ } return n.floatValue(); } catch (Throwable e) { return def; } }'
+_________________________________
+187
+b'ANDROID_TOKEN:public void changeColors() { redSinePosition += precisionIncrement; if (redSinePosition > sinePositionEnd) { redSinePosition = sinePositionStart; } greenSinePosition += precisionIncrement; if (greenSinePosition > sinePositionEnd) { greenSinePosition = sinePositionStart; } blueSinePosition += precisionIncrement; if (blueSinePosition > sinePositionEnd) { blueSinePosition 
+PRED: = sinePositionEnd;
+TARG: = sinePositionStart;
+ } super.currentColor.red = calculateColorValue(redSinePosition); super.currentColor.green = calculateColorValue(greenSinePosition); super.currentColor.blue = calculateColorValue(blueSinePosition); }'
+_________________________________
+188
+b'JAVA_CONSTRUCT:public void drawButton(PdfFormField button, String caption, BaseFont font, float fontSize, float llx, float lly, float urx, float ury) { PdfAppearance pa = PdfAppearance.createAppearance(writer, urx - llx, ury - lly); pa.drawButton(0f, 0f, urx - llx, ury - lly, caption, font, fontSize); button.setAppearance( 
+PRED: pa
+TARG: PdfAnnotation.APPEARANCE_NORMAL, pa
+); }'
+_________________________________
+189
+b'ANDROID_CONSTRUCT:public List<DataPoint> getPointsInRangeToEnd(long xMin) { int startIndex = approximateBinarySearch( 
+PRED: xMin
+TARG: xMin, 0, true
+); return data.subList(startIndex, data.size()); }'
+_________________________________
+190
+b'ANDROID_TOKEN:public void deactivate(final String tag, final Runnable done) 
+PRED: {
+TARG: throws CurrentActivityNotFoundException {
+ final Activity activity = getCurrentActivity(); if (isActivated() && activity != null) { activity.runOnUiThread(() -> activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)); } mTags.remove(tag); done.run(); }'
+_________________________________
+191
+b'ANDROID_TOKEN:public void onEvent(FabBehaviorChangedEvent event) { mBehavior = event.behavior; if(isViewAttached()) { FabBehavior behavior = resolveFabBehavior(event.behavior); getView().setBehavior 
+PRED: (behavior);
+TARG: (behavior, true);
+ } }'
+_________________________________
+192
+b'JAVA_TOKEN:@Override protected boolean managerAddProperty(String key, String value) { final boolean handled = super.managerAddProperty(key, value); if (!handled) { if (handleResourceHeader(key, value)) { return true; } this.portletResourceOutputHandler.addHeader(key, value); } return 
+PRED: handled;
+TARG: true;
+ }'
+_________________________________
+193
+b'JAVA_CONSTRUCT:@Nonnull public EmployeeQuery withIds(@Nullable long... ids) { if (_ids != null) { throw new IllegalStateException("Ids already set."); } _ids = newHashSet( 
+PRED: ids
+TARG: toObject(ids)
+); return this; }'
+_________________________________
+194
+b'JAVA_CONSTRUCT:public static ApiVersionDoc build(Method method) { ApiVersionDoc apiVersionDoc = null; ApiVersion methodAnnotation = method.getAnnotation(ApiVersion.class); ApiVersion typeAnnotation = method.getDeclaringClass().getAnnotation(ApiVersion.class); if(typeAnnotation != null) { apiVersionDoc = buildFromAnnotation(typeAnnotation); } if(methodAnnotation != null) { apiVersionDoc = buildFromAnnotation( 
+PRED: methodAnnotation
+TARG: method.getAnnotation(ApiVersion.class)
+); } return apiVersionDoc; }'
+_________________________________
+195
+b'JAVA_CONSTRUCT:static Optional<BigQueryTableSchema> getTableSchema(Configuration conf) throws IOException { String fieldsJson = conf.get(BigQueryConfiguration.OUTPUT_TABLE_SCHEMA_KEY); if (!Strings.isNullOrEmpty(fieldsJson)) { try { TableSchema tableSchema = BigQueryTableHelper.createTableSchemaFromFields(fieldsJson); return Optional.of( 
+PRED: tableSchema
+TARG: BigQueryTableSchema.wrap(tableSchema)
+); } catch (IOException e) { throw new IOException( "Unable to parse key \'" + BigQueryConfiguration.OUTPUT_TABLE_SCHEMA_KEY + "\'.", e); } } return Optional.empty(); }'
+_________________________________
+196
+b'JAVA_CONSTRUCT:public static void free(ByteBuffer buffer) { if (SUPPORTED && buffer != null && buffer.isDirect()) { try { if (UNSAFE != null) { cleanerClean.invoke( 
+PRED: buffer
+TARG: UNSAFE, buffer
+); } else { Object cleaner = DirectByteBufferDeallocator.cleaner.invoke(buffer); cleanerClean.invoke(cleaner); } } catch (Throwable t) { UndertowLogger.ROOT_LOGGER.directBufferDeallocationFailed(t); } } }'
+_________________________________
+197
+b'JAVA_TOKEN:public static AAccessSpecifierAccessSpecifier newAAccessSpecifierAccessSpecifier( PAccess access, boolean isStatic, boolean isAsync, boolean isPure) { AAccessSpecifierAccessSpecifier result = new AAccessSpecifierAccessSpecifier(); result.setAccess(access); result.setStatic(isStatic ? new TStatic() : null); result.setAsync(isAsync 
+PRED: );
+TARG: ? new TAsync() : null);
+ result.setPure(isPure); return result; }'
+_________________________________
+198
+b'ANDROID_CONSTRUCT:public void onClick(View v) { if (state == newState && mX == mWidth) { setState(state, false); } else { setState( 
+PRED: state, true
+TARG: newState, true
+); } }'
+_________________________________
+199
+b'ANDROID_CONSTRUCT:public void getLocationDetails(@Path("location_id") Integer locationId, Callback<PlaceDetails> callback) { PlaceDetails placeDetails = new PlaceDetails(); placeDetails.setPlace(places.get(locationId)); placeDetails.setAverageDistance(68000); placeDetails.setBestDistance(12000); placeDetails.setLocationGuesses(generateRandomLatLons(10)); callback.success( 
+PRED: placeDetails
+TARG: placeDetails,null
+); }'
+_________________________________
+200
+b'ANDROID_CONSTRUCT:private void loadGalleryContent() { updateProgressBar( 
+PRED: true
+TARG: false
+); if (getIntent().hasExtra(EXTRA_FEATURED_IMAGE)) { FeaturedImage featuredImage = GsonUnmarshaller.unmarshal(FeaturedImage.class, getIntent().getStringExtra(EXTRA_FEATURED_IMAGE)); featuredImage.setAge(getIntent().getIntExtra(EXTRA_FEATURED_IMAGE_AGE, 0)); updateProgressBar(false); applyGalleryList(Collections.singletonList(new MediaListItem(featuredImage.title()))); } else { fetchGalleryItems(); } }'
+_________________________________

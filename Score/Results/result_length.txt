@@ -1,0 +1,40 @@
+class 1: mean perfect 6.23, median perfect 6
+class 1: mean non perfect target 6.96, median non perfect target 6
+class 1: mean non perfect prediction 8.78, median non perfect prediction 7
+class 1: mean global 6.95, median global 6.0
+class 2: mean perfect 6.55, median perfect 6.0
+class 2: mean non perfect target 7.08, median non perfect target 6
+class 2: mean non perfect prediction 7.03, median non perfect prediction 6
+class 2: mean global 7.06, median global 6
+class 3: mean perfect 6.1, median perfect 5
+class 3: mean non perfect target 6.81, median non perfect target 6.0
+class 3: mean non perfect prediction 6.55, median non perfect prediction 6.0
+class 3: mean global 6.75, median global 6
+class 4: mean perfect 5.56, median perfect 5.0
+class 4: mean non perfect target 6.58, median non perfect target 6
+class 4: mean non perfect prediction 6.17, median non perfect prediction 6
+class 4: mean global 6.42, median global 6
+class 5: mean perfect 5.16, median perfect 5.0
+class 5: mean non perfect target 6.33, median non perfect target 6
+class 5: mean non perfect prediction 5.82, median non perfect prediction 5
+class 5: mean global 6.05, median global 5
+class 6: mean perfect 4.58, median perfect 4
+class 6: mean non perfect target 6.16, median non perfect target 5.0
+class 6: mean non perfect prediction 5.43, median non perfect prediction 5.0
+class 6: mean global 5.6, median global 5
+class 7: mean perfect 4.44, median perfect 4.0
+class 7: mean non perfect target 6.02, median non perfect target 5.0
+class 7: mean non perfect prediction 5.18, median non perfect prediction 5.0
+class 7: mean global 5.33, median global 5.0
+class 8: mean perfect 4.3, median perfect 4
+class 8: mean non perfect target 5.91, median non perfect target 5.0
+class 8: mean non perfect prediction 5.02, median non perfect prediction 5.0
+class 8: mean global 5.08, median global 5
+class 9: mean perfect 4.07, median perfect 3
+class 9: mean non perfect target 5.81, median non perfect target 5
+class 9: mean non perfect prediction 4.72, median non perfect prediction 4
+class 9: mean global 4.71, median global 4.0
+class 10: mean perfect 2.91, median perfect 2
+class 10: mean non perfect target 5.52, median non perfect target 5.0
+class 10: mean non perfect prediction 4.05, median non perfect prediction 3.0
+class 10: mean global 3.15, median global 3
