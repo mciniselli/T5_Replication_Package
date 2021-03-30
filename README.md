@@ -207,7 +207,7 @@ You can find details about the implementation of the RoBERTa model [here](https:
 
 ### BLEU and Levenshtein distance for T5 model with pretraining 
 Here the results for the T5 single-task (Single column) and multi-task (Multi column) with pretraining:
-![Comparison](BLEU_Score/Multi_vs_Single.png | width=200)
+<img src="BLEU_Score/Multi_vs_Single.png" width="400">
 
 ### Semantical Equivalence
 
@@ -219,12 +219,14 @@ We reported some examples of each model predictions.
 
 #### T5
 ![T5](Perfect_Prediction_Examples/qualitative_T5.png)
+<img src="Perfect_Prediction_Examples/qualitative_T5.png" width="400">
+
 
 #### RoBERTa
-![RoBERTa](Perfect_Prediction_Examples/qualitative_RoBERTa.png)
+<img src="Perfect_Prediction_Examples/qualitative_RoBERTa.png" width="400">
 
 #### n-gram
-![ngram](Perfect_Prediction_Examples/qualitative_ngram.png)
+<img src="Perfect_Prediction_Examples/qualitative_ngram.png" width="400">
 
 All these files can be found in `Perfect_Prediction_Examples` folder
 
