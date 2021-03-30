@@ -260,7 +260,7 @@ TODO. Add a bibtex here when available.
 ```
 
 ## Contributors
-[Matteo Ciniselli](),
+[Matteo Ciniselli](https://www.inf.usi.ch/phd/cinism/),
 [Nathan Cooper](https://nathancooper.io/#/about),
 [Luca Pascarella](https://lucapascarella.com/),
 [Antonio Mastropaolo](https://antoniomastropaolo.com/),
