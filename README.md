@@ -1,5 +1,7 @@
 # An empirical study on the usage of T5 models for Code Completion
 
+This study extends our previous work: "[An Empirical Study on the Usage of BERT Models for Code Completion](https://arxiv.org/pdf/2103.07115.pdf)".
+
 In this work we explored the capabilities of **Text-To-Text Transfer Transformer (T5)** for Code Completion related tasks. For the task we're going to mask some tokens and then check if the model is able to predict them.
 
 ### Preliminary step
@@ -239,6 +241,39 @@ We reported some examples of each model predictions.
 ![ngram](Perfect_Prediction_Examples/qualitative_ngram.png)
 
 All these files can be found in `Perfect_Prediction_Examples` folder
+
+## How to cite
+
+For the original study based on the BERT model, use the following BibTeX
+```
+@article{ciniselli2021empirical,
+  title={An Empirical Study on the Usage of BERT Models for Code Completion},
+  author={Ciniselli, Matteo and Cooper, Nathan and Pascarella, Luca and Poshyvanyk, Denys and Di Penta, Massimiliano and Bavota, Gabriele},
+  journal={arXiv preprint arXiv:2103.07115},
+  year={2021}
+}
+```
+
+For this extension based on the T5 model, use the following BibTeX
+```
+TODO. Add a bibtex here when available. 
+```
+
+## Contributors
+[Matteo Ciniselli](),
+[Nathan Cooper](https://nathancooper.io/#/about),
+[Luca Pascarella](https://lucapascarella.com/),
+[Antonio Mastropaolo](https://antoniomastropaolo.com/),
+[Emad Aghajani](https://emadpres.github.io/),
+[Denys Poshyvanyk](http://www.cs.wm.edu/~denys/),
+[Massimiliano Di Penta](https://mdipenta.github.io/),
+[Gabriele Bavota](https://www.inf.usi.ch/faculty/bavota/),
+
+
+## License
+This software is licensed under the Apache 2.0 License.
+
+This project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No. 851720). W&M team was supported in part by the NSF CCF-1955853, CCF-2007246 and CCF-1815186 grants. Any opinions, findings, and conclusions expressed herein are the authors’ and do not necessarily reflect those of the sponsors.
 
 
    
