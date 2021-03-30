@@ -163,19 +163,6 @@ where
 - input_path is the file that contains the files cited above (and a new file lengths.txt with the number of tokens of each prediction)
 - score_path is the path to the file with the scores
 
-We also computed the number of perfect prediction related to the number of tokens to predict. You can run:
-
-```
-python3 score_analysis.py --input_path <folder_with_input_files>  --score_path <path_to_score_file> --perfect
-```
-where
-- input_path is the file that contains the files cited above 
-- score_path is the path to the file with the scores
-
-To assess the metrics like BLEU score and Levenshtein distance you can run:
-```
-python3 score_analysis.py --input_path <folder_with_input_files>  --score_path <path_to_score_file> --metrics
-```
 You can find all the results (and the scores.txt files) in the folder `Scores/Results`
 
 
@@ -183,7 +170,6 @@ You can find all the results (and the scores.txt files) in the folder `Scores/Re
 
 You can find [here](https://drive.google.com/file/d/1oZoo58NRB4LQJVH8P-AxEU0yi7jAVyq2/view?usp=sharing) two csv files that compare T5, RoBERTa and n-gram models.
 Some analysis were done by using Excel filters.
-
 
 ### Comparison with n-gram with cloning
 You can run:
@@ -197,15 +183,35 @@ where:
 
 You can find all files and results in `Cloning_Comparison` folder
 
+### Comparison with RoBERTa model
+We compared T5 single-task without pretraining with RoBERTa model (fig 1 and table 4 in the paper).
+You can find the script in `No_Pretrain_Comparison` folder.
+
+To computed the number of perfect prediction related to the number of tokens to predict, you can run:
+```
+python3 metrics_analysis.py --input_path <folder_with_input_files> --perfect
+```
+where
+- input_path is the file that contains the files cited in the confidence section (you need to use the prediction of the model without pretraining) 
+
+To assess the metrics like BLEU score and Levenshtein distance you can run:
+```
+python3 metrics_analysis.py --input_path <folder_with_input_files>  --metrics
+```
 
 ### RoBERTa Model
 You can find details about the implementation of the RoBERTa model [here](https://github.com/RoBERTaCode/roberta)
+
 
 ## Additional Results
 
 ### BLEU and Levenshtein distance for T5 model with pretraining 
 Here the results for the T5 single-task (Single column) and multi-task (Multi column) with pretraining:
-![Comparison](BLEU_Score/With_vs_Without_Pretrain.png)
+![Comparison](BLEU_Score/Multi_vs_Single.png | width=200)
+
+### Semantical Equivalence
+
+In `Semantical_Equivalence` folder you can find the methods we analyzed to check whether non perfect predictions have the same behaviour (semantically equivalent predictions)
 
 ### Qualitative analysis
 

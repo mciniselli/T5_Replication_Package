@@ -1,12 +1,3 @@
-2
-PRED: annotationClass
-TARG: (Class<Annotation>) annotationClass
-6
-PRED: entries
-TARG: new ArrayList<>(entries)
-23
-PRED: listener
-TARG: (JainMgcpExtendedListener) listener
 91
 PRED: headerName
 TARG: (headerName)
