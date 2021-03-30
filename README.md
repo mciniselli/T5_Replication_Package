@@ -1,20 +1,22 @@
-# An empirical study on the usage of T5 models for Code Completion
+# An Empirical Study on the Usage of Transformer Models for Code Completion
 
 This study extends our previous work: "[An Empirical Study on the Usage of BERT Models for Code Completion](https://arxiv.org/pdf/2103.07115.pdf)".
 
-In this work we explored the capabilities of **Text-To-Text Transfer Transformer (T5)** for Code Completion related tasks. For the task we're going to mask some tokens and then check if the model is able to predict them.
+In this work we present a large-scale study exploring the capabilities of state-of-the-art Transformer-based models in supporting code completion at different granularity levels, including single tokens, one or multiple entire statements, up to entire code blocks.
+
+## T5 model
 
 ### Preliminary step
 The training of the model is done on a TPU instance of **Colab**.
 A GCS Bucket is mandatory.
-To Set up a new GCS Bucket for training and fine-tuning a T5 Model, please follow the original guide provided by Google [here](https://cloud.google.com/storage/docs/quickstart-console).
+To Set up a new GCS Bucket for training and fine-tuning a T5 Model, please follow the guide provided by Google [here](https://cloud.google.com/storage/docs/quickstart-console).
 
 
 ### Pipeline
 * ##### Dataset
 
     You can find the datasets used for pretraining and fine-tuning the models [here](https://drive.google.com/drive/folders/17LlqNQeZ6BkRACJY34munsHtymOqLunV?usp=sharing) and [here](https://drive.google.com/drive/folders/1_tSaJzoG3v9ypwmI3HzR2GTbWgWgZJ-L?usp=sharing). 
-    For pretraining tokenizer we shared also **key.csv** file with information about each method.
+    For pretraining the tokenizer we also share the **key.csv** file with information about each method.
 * ##### Tokenizer
 
     We trained the tokenizer using the script in `Tokenizer` folder.
@@ -25,23 +27,25 @@ To Set up a new GCS Bucket for training and fine-tuning a T5 Model, please follo
     - input: the path for the txt file containing the code to tokenize 
     - model_prefix: the prefix for the tokenizer (e.g. code => it generates code.vocab and code.model)
     - vocab_size: the size of the vocabulary
-    - bos_id: begin of sentence id (this change only the order or the tokens stored in the vocabulary- bos_id: begin of sentence id (this change only the order or the tokens stored in the vocabulary)
-    - eos_id: end of sentence id (this change only the order or the tokens stored in the vocabulary)
-    - unk_id: unknown token id (this change only the order or the tokens stored in the vocabulary)
-    - pad_id: padding id (this change only the order or the tokens stored in the vocabulary)
+    - bos_id: begin of sentence id (this changes only the order or the tokens stored in the vocabulary
+    - eos_id: end of sentence id (this changes only the order or the tokens stored in the vocabulary)
+    - unk_id: unknown token id (this changes only the order or the tokens stored in the vocabulary)
+    - pad_id: padding id (this changes only the order or the tokens stored in the vocabulary)
+    
     You can find the tokenizer in `Pretraining/tokenizer_model` folder.
     
 * ##### Pretraining
     
-    For the pretraining model you can find the notebook **pretrain.ipynb** in `Pretraining` folder. 
-    The notebook has some comments that explain how to run it.
-    You can also find the gin file for config in `configuration_file` folder and the trained tokenizer in `tokenizer_model` folder.
+    For pretraining the model you can find the notebook **pretrain.ipynb** in the `Pretraining` folder. 
+    The notebook has comments that explain how to run it.
+    You can also find the gin file for config in the `configuration_file` folder and the trained tokenizer in the `tokenizer_model` folder.
     The pretrained model is available [here](https://drive.google.com/drive/folders/1783WqX5GypthAG9FS2uYlSDR9d0zslEB?usp=sharing)
+    
 * ##### Hyper Parameter tuning
 
     We did hyper parameter tuning to find the best model for the finetuning.
     We tested 4 configuration and trained the model for 100k steps.
-    The configuration are the following:
+    The configurations are the following:
     - constant learning rate (lr = 0.001)
     - Inverse Square Root (warmup_steps = 10000)
     - slanted (cut_fraction=0.1, ratio=32, max_learning_rate=0.01, start_step=0)
@@ -49,7 +53,7 @@ To Set up a new GCS Bucket for training and fine-tuning a T5 Model, please follo
     
     You can find the commented notebooks in `HP_Tuning/pretraining_script`.
     The configuration files for each HP tuning are in `HP_Tuning/configuration_files`.
-    You can find the script to evaluate the performances in `HP_Tuning/evaluation` folder.
+    You can find the script to evaluate the performances in the `HP_Tuning/evaluation` folder.
     ```
     python3 perfect_predictions.py --folder <folder_with_prediction> 
     ```
@@ -70,15 +74,14 @@ To Set up a new GCS Bucket for training and fine-tuning a T5 Model, please follo
     
 * ##### Finetuning
 
-    For the finetuning phase, we wanted to evaluate if the pretrained model is able to increase the performance of the model and if the training on multiple tasks can give reciprocal benefits to all the tasks.
-    To **evaluate the performance** of each model we used a beam size of 1 (in order to be comparable with RoBERTa model).
-    We did 3 different fine tuning:
-    - A multi-task finetuning (in `Finetuning/multitask` folder)
-    - A single-task finetuning for each dataset (6 models) starting from pretrained model (in `Finetuning/single_task_from_pretrained` folder)
-    - A single-task finetuning for each dataset (6 models) starting from scratch (in `Finetuning/single_task_no_pretrained` folder)
+    To **evaluate the performance** of each model we used a beam size of 1.
+    We performed 3 different fine tunings:
+    - Multi-task finetuning (`Finetuning/multitask` folder)
+    - Single-task finetuning for each dataset (6 models) starting from pretrained model (`Finetuning/single_task_from_pretrained` folder)
+    - Single-task finetuning for each dataset (6 models) starting from scratch (`Finetuning/single_task_no_pretrained` folder)
     
     We finetuned the **multi-task** model for 400k steps (around 29 epochs).
-    We chosed the number of steps of the other models so that the number of training epochs is 29.
+    We chose the number of steps of the other models so that the number of training epochs is 29.
     The following table contains the number of training steps for each model:
     | DATASET           | STEPS |
     |-------------------|------:|
@@ -89,8 +92,8 @@ To Set up a new GCS Bucket for training and fine-tuning a T5 Model, please follo
     | android block     | 24000 |
     | android token     | 85000 |
     
-    You can finetune and evaluation running **Fine_tuning.ipynb** and **evaluate.ipynb** notebooks (read the comments in the notebook).
-    For the evaluation you have to load on the Bucket the input file containing the methods you want to predict and use the path of this file for the **input_file** in the predict method.
+    You can finetune and evaluate the models by running the **Fine_tuning.ipynb** and **evaluate.ipynb** notebooks (check the comments in the notebook).
+    For the evaluation you have to load on the Bucket the input file containing the methods you want to predict and use the path of this file as the **input_file** in the predict method.
     For the multi-task finetuning you have to merge all the input files for each task in order to predict all methods in one single step
     
     **Multi-task finetuning**
@@ -135,18 +138,15 @@ To Set up a new GCS Bucket for training and fine-tuning a T5 Model, please follo
     | android token     |                 69.26 |                  64.83 |                    63.77 |
     | overall           |                 59.29 |                  56.24 |                    54.10 |
     
-    You can see that training a model with multiple tasks is beneficial for all the tasks.
-    The pretraining is useful to increase the performances of each model.
-    
     You can find the models and the predictions [here](https://drive.google.com/drive/folders/1tRsKzKvcmJRaczOUzYHmhIlR8WZR38qY?usp=sharing)
     
-### Score Analysis
-We chose the **best model** found (i.e., multi-task model with pre-training) to further analyze its performance. 
+### Analysis of the Prediction Confidence
+We chose the **best model** found (i.e., multi-task model with pre-training) to further analyze its performance, and in particular the reliability of the prediction confidence as a proxy for the prediction quality. 
 T5 returns a **score** for each prediction, ranging from minus infinity to 0. This score is the log likelihood of the prediction itself. It means that if the score is 0 then the log likelihood (ln) of the prediction is 0. So the likelihood is 1 and this implies that the model has confidence 100\% that the prediction is correct (high confidence). If the score is -2 then the log likelihood of the prediction is -2. So the likelihood is 0.14 and this implies that the model has confidence 14\% that the prediction is correct (low confidence).
 
 To compute the score file you can run the notebook **evaluate_score.ipynb** in `Score` folder.
 
-To see the percentage of perfect prediction for each class and the analysis of Levenshtein distance among all classes you can run:
+To see the percentage of perfect prediction for each confidence interval and the analysis of Levenshtein distance among all confidence intervals you can run:
 ```
 python3 score_analysis.py --input_path <folder_with_input_files> --score_path <path_to_score_file> --score
 ```
@@ -154,7 +154,7 @@ where
 - input_path is the folder that contains inputs.txt, targets.txt, predictions.txt files (respectively the input given to T5 model, the target you want T5 to predict and the prediction file)
 - score_path is the path to the file with the scores
 
-To evaluate the average length of the predictions for each class you can run:
+To evaluate the average length of the predictions for each confidence interval you can run:
 
 ```
 python3 score_analysis.py  --input_path <folder_with_input_files> --score_path <path_to_score_file> --length
@@ -178,54 +178,34 @@ python3 score_analysis.py --input_path <folder_with_input_files>  --score_path <
 ```
 You can find all the results (and the scores.txt files) in the folder `Scores/Results`
 
-### Analysis of semantic equivalent predictions
 
-We analyzed 200 prediction that are not perfect predictions to check whether the predictions, although not perfect, have the same behaviour of the target.
-We decided to analyze the performance with highest confidence given from T5 model.
-You can find the script and the results in `Semantical_Equivalence` folder:
-
-```
-python3 prediction_analysis.py --input_path <path_to_input_folder> --score_path <path_to_score_file> --output_path <path_to_output_folder> --check_best
-```
-where
-- input_path is the folder that contains inputs.txt, targets.txt, predictions.txt files, lengths.txt (as seen before)
-- score_path is the path to the file with the scores
-- output_folder is the folder you want to save results in
-
-### Models comparison
+## Models comparison
 
 You can find [here](https://drive.google.com/file/d/1oZoo58NRB4LQJVH8P-AxEU0yi7jAVyq2/view?usp=sharing) two csv files that compare T5, RoBERTa and n-gram models.
 Some analysis were done by using Excel filters.
 
-If you want to compare the RoBERTa and n-gram model with T5 without pretraining you can run:
-```
-python3 prediction_analysis.py --result_csv <path_to_csv_file> --output_folder  <path_to_output_folder>
-```
-where:
-- result_csv is the path to the csv file (without pretraining) that you can find in the link above
-- output_folder is the path where you want to save the result
-You can find the script and the results in `No_Pretraining_Comparison` folder
 
 ### Comparison with n-gram with cloning
-We replicate the study of [MSR paper](https://arxiv.org/abs/2103.07115) using n-gram model with the cloning of a bunch of repositories with 200 methods.
 You can run:
 ```
 python3 prediction_analysis.py --input_folder <input_for_n_gram> --output_folder  <path_to_output_folder> --result_csv <path_to_csv_file>
 ```
 where:
-- input_folder is the path containing the output of n-gram model trained in MSR paper (useful to retrieve the id of the trained methods)
+- input_folder is the path containing the output of n-gram model trained in the MSR paper (useful to retrieve the id of the trained methods)
 - output folder is the path where you want to save results
-- result_csv is the path with the results of t5 model
+- result_csv is the path with the results of the T5 model
 
 You can find all files and results in `Cloning_Comparison` folder
 
-### Pretraining comparison
-We compared T5 multi-task with pretraining and T5 single-task without pretraining, analyzing BLEU score and Levenshtein distance.
-To compute the metrics for T5 without pretraining, you can use the same code used before (you only need to change prediction file merging the predictions of each dataset in the correct order they compare in the input file).
-Here the result for T5 multi-task with pretraining (With column) and single-task without pretraining (Without column):
-![Comparison](BLEU_Score/With_vs_Without_Pretrain.png)
 
-You can find further details about RoBERTa model [here](https://github.com/RoBERTaCode/roberta)
+### RoBERTa Model
+You can find details about the implementation of the RoBERTa model [here](https://github.com/RoBERTaCode/roberta)
+
+## Additional Results
+
+### BLEU and Levenshtein distance for T5 model with pretraining 
+Here the results for the T5 single-task (Single column) and multi-task (Multi column) with pretraining:
+![Comparison](BLEU_Score/With_vs_Without_Pretrain.png)
 
 ### Qualitative analysis
 
@@ -244,13 +224,15 @@ All these files can be found in `Perfect_Prediction_Examples` folder
 
 ## How to cite
 
-For the original study based on the BERT model, use the following BibTeX
+For the original study based on the RoBERTa model, use the following BibTeX
 ```
-@article{ciniselli2021empirical,
-  title={An Empirical Study on the Usage of BERT Models for Code Completion},
-  author={Ciniselli, Matteo and Cooper, Nathan and Pascarella, Luca and Poshyvanyk, Denys and Di Penta, Massimiliano and Bavota, Gabriele},
-  journal={arXiv preprint arXiv:2103.07115},
-  year={2021}
+@inproceedings{Ciniselli2021,
+	author = {Ciniselli, Matteo and Cooper, Nathan and Pascarella, Luca and Poshyvanyk, Denys and Di Penta, Massimiliano and Bavota, Gabriele},
+	title = {An Empirical Study on the Usage of BERT Models for Code Completion},
+	booktitle = {Proceedings of the 18th Working Conference on Mining Software Repositories},
+	series = {MSR '21},
+	year = {2021},
+	pages = {To Appear}
 }
 ```
 
@@ -271,7 +253,7 @@ TODO. Add a bibtex here when available.
 
 
 ## License
-This software is licensed under the Apache 2.0 License.
+This software is licensed under the MIT License.
 
 This project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No. 851720). W&M team was supported in part by the NSF CCF-1955853, CCF-2007246 and CCF-1815186 grants. Any opinions, findings, and conclusions expressed herein are the authors’ and do not necessarily reflect those of the sponsors.
 
