@@ -52,7 +52,7 @@ To Set up a new GCS Bucket for training and fine-tuning a T5 Model, please follo
     python3 perfect_predictions.py --folder <folder_with_prediction> 
     ```
     In the **--folder** you have to save all the files generated during the evaluation by tensorflow.
-    You can find the files [here](https://drive.google.com/drive/folders/1HoqMM1adk7AiLknvc42ErjGcpgQn9jiM?usp=sharing) the HP tuning models and the files for the predictions
+    You can find [here](https://drive.google.com/drive/folders/1HoqMM1adk7AiLknvc42ErjGcpgQn9jiM?usp=sharing) the HP tuning models and the files for the predictions
     
     Then we evaluated the performance; the best model was **slanted**.
     Here the **percentage of perfect predictions** for each model:
@@ -136,11 +136,11 @@ To Set up a new GCS Bucket for training and fine-tuning a T5 Model, please follo
     You can see that training a model with multiple tasks is beneficial for all the tasks.
     The pretraining is useful to increase the performances of each model.
     
-    You can find the models and the prediction [here](https://drive.google.com/drive/folders/1tRsKzKvcmJRaczOUzYHmhIlR8WZR38qY?usp=sharing)
+    You can find the models and the predictions [here](https://drive.google.com/drive/folders/1tRsKzKvcmJRaczOUzYHmhIlR8WZR38qY?usp=sharing)
     
 ### Score Analysis
 We chose the **best model** found (i.e., multi-task model with pre-training) to further analyze its performance. 
-T5 returns a score for each prediction, ranging from minus infinity to 0. This score is the log likelihood of the prediction itself. It means that if the score is 0 then the log likelihood (ln) of the prediction is 0. So the likelihood is 1 and this implies that the model has confidence 100\% that the prediction is correct (high confidence). If the score is -2 then the log likelihood of the prediction is -2. So the likelihood is 0.14 and this implies that the model has confidence 14\% that the prediction is correct (low confidence).
+T5 returns a **score** for each prediction, ranging from minus infinity to 0. This score is the log likelihood of the prediction itself. It means that if the score is 0 then the log likelihood (ln) of the prediction is 0. So the likelihood is 1 and this implies that the model has confidence 100\% that the prediction is correct (high confidence). If the score is -2 then the log likelihood of the prediction is -2. So the likelihood is 0.14 and this implies that the model has confidence 14\% that the prediction is correct (low confidence).
 
 To compute the score file you can run the notebook **evaluate_score.ipynb** in `Score` folder.
 
@@ -192,7 +192,8 @@ where
 
 ### Models comparison
 
-You can find [here](https://drive.google.com/file/d/1oZoo58NRB4LQJVH8P-AxEU0yi7jAVyq2/view?usp=sharing) two excel sheets that compare T5, RoBERTa and n-gram models.
+You can find [here](https://drive.google.com/file/d/1oZoo58NRB4LQJVH8P-AxEU0yi7jAVyq2/view?usp=sharing) two csv files that compare T5, RoBERTa and n-gram models.
+Some analysis were done by using Excel filters.
 
 If you want to compare the RoBERTa and n-gram model with T5 without pretraining you can run:
 ```
@@ -204,7 +205,7 @@ where:
 You can find the script and the results in `No_Pretraining_Comparison` folder
 
 ### Comparison with n-gram with cloning
-We replicate the study of [MSR paper](https://arxiv.org/abs/2103.07115) using n-gram model with the cloning of a bunch of (200) repositories.
+We replicate the study of [MSR paper](https://arxiv.org/abs/2103.07115) using n-gram model with the cloning of a bunch of repositories with 200 methods.
 You can run:
 ```
 python3 prediction_analysis.py --input_folder <input_for_n_gram> --output_folder  <path_to_output_folder> --result_csv <path_to_csv_file>
@@ -224,7 +225,16 @@ Here the result for T5 multi-task with pretraining (With column) and single-task
 
 You can find further details about RoBERTa model [here](https://github.com/RoBERTaCode/roberta)
 
-Examples of perfect prediction of all models can be found in `Perfect_Prediction_Examples` folder
+### Qualitative analysis
+
+We reported some examples of each model predictions.
+
+#### T5
+![T5](Perfect_Prediction_Examples/qualitative_T5.pdf)
+
+
+
+All these files can be found in `Perfect_Prediction_Examples` folder
 
 
    
