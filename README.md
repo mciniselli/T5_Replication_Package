@@ -218,15 +218,14 @@ In `Semantical_Equivalence` folder you can find the methods we analyzed to check
 We reported some examples of each model predictions.
 
 #### T5
-![T5](Perfect_Prediction_Examples/qualitative_T5.png)
-<img src="Perfect_Prediction_Examples/qualitative_T5.png" width="400">
+<img src="Perfect_Prediction_Examples/qualitative_T5.png" width="500">
 
 
 #### RoBERTa
-<img src="Perfect_Prediction_Examples/qualitative_RoBERTa.png" width="400">
+<img src="Perfect_Prediction_Examples/qualitative_RoBERTa.png" width="500">
 
 #### n-gram
-<img src="Perfect_Prediction_Examples/qualitative_ngram.png" width="400">
+<img src="Perfect_Prediction_Examples/qualitative_ngram.png" width="500">
 
 All these files can be found in `Perfect_Prediction_Examples` folder
 
