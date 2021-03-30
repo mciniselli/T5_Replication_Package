@@ -230,9 +230,13 @@ You can find further details about RoBERTa model [here](https://github.com/RoBER
 We reported some examples of each model predictions.
 
 #### T5
-![T5](Perfect_Prediction_Examples/qualitative_T5.pdf)
+![T5](Perfect_Prediction_Examples/qualitative_T5.png)
 
+#### RoBERTa
+![RoBERTa](Perfect_Prediction_Examples/qualitative_RoBERTa.png)
 
+#### n-gram
+![ngram](Perfect_Prediction_Examples/qualitative_ngram.png)
 
 All these files can be found in `Perfect_Prediction_Examples` folder
 
