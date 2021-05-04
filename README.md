@@ -213,6 +213,10 @@ Here the results for the T5 single-task (Single column) and multi-task (Multi co
 
 In `Semantical_Equivalence` folder you can find the methods we analyzed to check whether non perfect predictions have the same behaviour (semantically equivalent predictions)
 
+### Statistical Tests
+
+In `Statistical Tests` folder you can find details about statistical tests we performed
+
 ### Qualitative analysis
 
 We reported some examples of each model predictions.
