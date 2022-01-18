@@ -249,7 +249,13 @@ For the original study based on the RoBERTa model, use the following BibTeX
 
 For this extension based on the T5 model, use the following BibTeX
 ```
-TODO. Add a bibtex here when available. 
+@article{ciniselli2021empirical,
+  title={An Empirical Study on the Usage of Transformer Models for Code Completion},
+  author={Ciniselli, Matteo and Cooper, Nathan and Pascarella, Luca and Mastropaolo, Antonio and Aghajani, Emad and Poshyvanyk, Denys and Di Penta, Massimiliano and Bavota, Gabriele},
+  journal={IEEE Transactions on Software Engineering},
+  year={2021},
+  publisher={IEEE}
+}
 ```
 
 ## Contributors
